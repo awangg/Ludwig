@@ -2,7 +2,7 @@
   <div id="landing">
     <Logo />
     <div id="button">
-      <el-button round type="circle" src="button" class="button"><a href='/upload'>Let's Play!</a></el-button>
+      <a href='/upload'><el-button round type="circle" src="button" class="button">Let's Play!</el-button></a>
     </div>
   </div>
 </template>
