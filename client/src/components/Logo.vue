@@ -1,6 +1,6 @@
 <template>
   <div id="logo">
-    <img src="../assets/logo.png" alt="logo" class="logo">
+    <img src="../assets/logo_final.png" alt="logo" class="logo">
   </div>
 </template>
     
@@ -11,10 +11,10 @@ export default {
     
 <style lang="css">
 .logo {
-  height: 750px;
-  width: 750px;
+  height: 650px;
+  width: 850px;
   position: center;
-  margin-top: 2vh;
+  margin-top: 5vh;
 }
 
 </style> 
