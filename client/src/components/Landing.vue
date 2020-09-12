@@ -1,16 +1,19 @@
 <template>
   <div id="landing">
     <Logo />
+    <Button/>
   </div>
 </template>
 
 <script scoped>
 import Logo from "./Logo.vue"
+import Button from "./Button.vue"
 
 export default {
   name: 'Landing',
   components: {
-    Logo
+    Logo,
+    Button
   }
 }
 </script>
