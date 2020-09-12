@@ -1,5 +1,6 @@
 <template>
   <div id="landing">
+    <h1> musync </h1>
     <Logo />
     <div id="button">
       <a href='/upload'><el-button round type="circle" src="button" class="button">Let's Play!</el-button></a>
@@ -31,6 +32,7 @@ body {
   position: relative;
   height: 100%; 
 }
+
 #home {
   font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
   -webkit-font-smoothing: antialiased;

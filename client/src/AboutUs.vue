@@ -1,7 +1,7 @@
 <template>
   <div id="AboutUs">
     <h1>About Us</h1>
-    <Logo />
+    <img src="~@/assets/logo_final.png" alt="logo" class="logo">
     <img src="~@/assets/andy.jpg" alt="face" class="face">
     <img src="~@/assets/claire_pic.png" alt="face" class="face">
     <img src="~@/assets/megan_new.png" alt="face" class="face">
@@ -14,12 +14,10 @@
 </template>
 
 <script scoped>
-import Logo from "./components/Logo.vue"
 
 export default {
   name: 'AboutUs',
   components: {
-    Logo,
   }
 }
 </script>
