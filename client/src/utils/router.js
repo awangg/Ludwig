@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Landing from '../components/Landing.vue';
-import Upload from '../components/Landing.vue';
+import Upload from '../components/Upload.vue';
 
 Vue.use(VueRouter);
 
