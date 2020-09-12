@@ -1,7 +1,6 @@
 const http = require('http')
 const express = require('express')
 const bodyParser = require('body-parser')
-const mongodb = require('mongodb')
 
 const apiRoutes = require('../src/controllers')
 

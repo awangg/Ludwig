@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
 router.post('/', upload.single('video'), async (req, res) => {
   try {
     const videoId = await videos.uploadMergedVideo(req.body.name, req.file)
-    console.log(videoId)
     res.status(201).json(videoId)
   } catch (err) {
     console.log(err)
@@ -37,7 +36,7 @@ router.get('/:videoId', async (req, res) => {
     console.log(err)
     res.status(400).json(err)
   }
-} )
+})
 
 router.put('/:videoId', (req, res) => {
   res.status(200).send('Retrieved video')
