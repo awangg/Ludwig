@@ -1,7 +1,7 @@
 <template>
   <div id="AboutUs">
     <h1>About Us</h1>
-    <img src="~@/assets/logo_final.png" alt="logo" class="logo">
+    <img src="~@/assets/logo_final.png" alt="small_logo" class="small_logo">
     <img src="~@/assets/andy.jpg" alt="face" class="face">
     <img src="~@/assets/claire_pic.png" alt="face" class="face">
     <img src="~@/assets/megan_new.png" alt="face" class="face">
@@ -35,7 +35,7 @@ body {
   height: 100%; 
 }
 
-.logo {
+.small_logo {
   width: 150px;
   height: 85px;
   margin-top: -300px;
