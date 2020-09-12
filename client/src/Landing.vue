@@ -1,16 +1,9 @@
 <template>
   <div id="landing">
     <Logo />
-<<<<<<< HEAD:client/src/components/Landing.vue
-    <Button/>
-    <a href='/upload'><li>asdfas</li></a>
-    <p>asfad</p>
-
-=======
     <div id="button">
       <el-button round type="circle" src="button" class="button"><a href='/upload'>Let's Play!</a></el-button>
     </div>
->>>>>>> ef7a45b5cee0f68b8aa2c7de85628a708b0a1462:client/src/Landing.vue
   </div>
 </template>
 
