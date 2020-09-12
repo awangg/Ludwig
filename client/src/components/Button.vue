@@ -12,6 +12,8 @@ export default {
 <style lang="css">
 .button {
   background-color: #C998C3;
+  color: #ffffff;
+  font-size: 24px;
   width: 200px;
   height: 75px;
   margin-bottom:80%;
