@@ -1,7 +1,6 @@
 <template>
-  <div id="landing">
-    <Logo />
-    <Button/>
+  <div id="upload">
+    <p>hello</p>
   </div>
 </template>
 
@@ -10,7 +9,7 @@ import Logo from "./Logo.vue"
 import Button from "./Button.vue"
 
 export default {
-  name: 'Landing',
+  name: 'Upload',
   components: {
     Logo,
     Button
