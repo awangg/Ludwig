@@ -11,8 +11,8 @@ export default {
     
 <style lang="css">
 .logo {
-  height: 650px;
-  width: 850px;
+  height: 450px;
+  width: 650px;
   position: center;
   margin-top: 5vh;
 }
