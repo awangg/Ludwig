@@ -3,9 +3,7 @@
     <div id="container">
       <el-col :span="11"><div class="grid-content">
         <span>
-          <div id="logo">
-              <img src="./assets/logo_final.png" class="logo">
-          </div>
+         <Logo />
 
         <div id="button">
           <a href='/upload'><el-button round type="circle" src="button" class="button">sync</el-button></a>
@@ -21,24 +19,17 @@
 </template>
 
 <script scoped>
-
+import Logo from "./components/Logo.vue"
 
 export default {
   name: 'Landing',
   components: {
+    Logo
   }
 }
 </script>
 
 <style>
-
-
-.logo {
-  height: 400px;
-  width: 10px;
-  position: center;
-  margin-top: 5vh;
-}
 
 
 .el-col {
@@ -104,6 +95,8 @@ body {
   font-size: 24px;
   width: 200px;
   height: 75px;
+  margin-top: 100px;
+  position: center;
 }
 
 

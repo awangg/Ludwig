@@ -1,6 +1,6 @@
 <template>
   <div id="logo">
-    <img src="../assets/logo_final.png" alt="logo" class="logo">
+    <img src="../assets/logo_final.png" alt="logo" class="big-logo">
   </div>
 </template>
     
@@ -10,7 +10,7 @@ export default {
 </script>
     
 <style lang="css">
-.logo {
+.big-logo {
   height: 400px;
   width: 600px;
   position: center;
