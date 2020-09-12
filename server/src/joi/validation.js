@@ -21,5 +21,5 @@ function validateVideo(data) {
 }
 
 module.exports = {
-    validateVideo = validateVideo
+    validateVideo: validateVideo
 }
