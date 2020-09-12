@@ -19,5 +19,9 @@ export default {
   width: 200px;
   height: 75px;
 }
+.button:hover {
+   background-color: #E4CEE0;
+   color: #C998C3;
+}
 
 </style> 
