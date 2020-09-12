@@ -5,6 +5,7 @@ import App from './App.vue';
 import router from './utils/router';
 
 Vue.use(ElementUI);
+Vue.use(router);
 
 new Vue({
   router,
