@@ -5,14 +5,21 @@
 </template>
 
 <script scoped>
-import Logo from "./Logo.vue"
-import Button from "./Button.vue"
+// import Logo from "./Logo.vue"
+// import Button from "./Button.vue"
 
 export default {
   name: 'Upload',
   components: {
+<<<<<<< HEAD
     Logo,
-    Button
+    AboutUs,
+    UploadButton,
+    CustButton
+=======
+    // Logo,
+    // Button
+>>>>>>> cf8841c84c37ed04a9047c85494b94569a295015
   }
 }
 </script>

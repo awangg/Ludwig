@@ -2,6 +2,9 @@
   <div id="landing">
     <Logo />
     <Button/>
+    <a href='/upload'><li>asdfas</li></a>
+    <p>asfad</p>
+
   </div>
 </template>
 
