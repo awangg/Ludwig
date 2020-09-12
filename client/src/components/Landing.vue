@@ -27,6 +27,7 @@ body {
   /* make it look decent enough #C8E7F5*/
   color: #000000;
   overflow-x: hidden;
+  overflow-y: hidden;
   position: relative;
   height: 100%; 
 }
@@ -37,6 +38,7 @@ body {
   text-align: center;
   color: #000000;
 }
+
 @media screen and (max-width: 399px) {
   body {
     overflow: visible;
