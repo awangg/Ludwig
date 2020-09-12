@@ -5,7 +5,7 @@ const { Readable } = require('stream')
 const MongoClient = mongodb.MongoClient
 const ObjectId = mongodb.ObjectID
 
-const validation = require('validation')
+const validation = require('../joi/validation')
 
 var database;
 var bucket;
