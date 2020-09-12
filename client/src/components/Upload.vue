@@ -7,7 +7,7 @@
 <script scoped>
 // import Logo from "./Logo.vue"
 // import Button from "./Button.vue"
-
+ 
 export default {
   name: 'Upload',
   components: {
