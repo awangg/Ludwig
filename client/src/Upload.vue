@@ -1,19 +1,56 @@
 <template>
   <div id="Upload">
-    <p>hello</p>
+    <el-header>
+      <navbar/>
+    </el-header>
+    <el-main>
+      <el-upload
+        class="upload-demo"
+        drag
+        action="https://localhost"
+        :on-preview="handlePreview"
+        :on-remove="handleRemove"
+        :file-list="fileList"
+        multiple
+        show-file-list>
+        <i class="el-icon-upload"></i>
+        <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
+        <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500TB</div>
+      </el-upload>
+      <a href="/description"><el-button round type="circle" src="button" class="button">next</el-button></a>
+    </el-main>
   </div>
 </template>
 
 <script scoped>
-// import Logo from "./Logo.vue"
-// import Button from "./Button.vue"
+import navbar from "./components/Navbar.vue"
  
 export default {
   name: 'Upload',
   components: {
-    // Logo,
-    // Button
-  }
+    navbar
+  },
+  data() {
+      return {
+        fileList: []
+      };
+    },
+    methods: {
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePreview(file) {
+        console.log(file);
+        this.fileList.append(file)
+      },
+      handleExceed(files, fileList) {
+        this.$message.warning(`The limit is 3, you selected ${files.length} files this time, add up to ${files.length + fileList.length} totally`);
+      },
+      beforeRemove(file) {
+        this.fileList.remove(file)
+        return this.$confirm(`Cancel the transfert of ${ file.name } ?`);
+      }
+    }
 }
 </script>
 
@@ -45,5 +82,18 @@ body {
 #item {
   margin: 0;
   padding: 0;
+}
+
+.button {
+  margin-top: 10px;
+  background-color: #C998C3;
+  color: #ffffff;
+  font-size: 24px;
+  width: 100px;
+  height: 40px;
+}
+.button:hover {
+   background-color: #E4CEE0;
+   color: #C998C3;
 }
 </style>

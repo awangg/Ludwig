@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 
 import Landing from '../Landing.vue';
 import Upload from '../Upload.vue';
+import Description from '../Description.vue';
+import Success from '../Success.vue';
 
 Vue.use(VueRouter);
 
@@ -16,7 +18,18 @@ const routes = [
     path: '/upload',
     name: 'upload',
     component: Upload
+  },
+  {
+    path: '/description',
+    name: 'description',
+    component: Description
+  },
+  {
+    path: '/success',
+    name: 'success',
+    component: Success
   }
+  
 ];
 
 const router = new VueRouter({
