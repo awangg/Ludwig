@@ -1,22 +1,19 @@
 <template>
   <div id="landing">
     <Logo />
-    <Button/>
-    <a href='/upload'><li>asdfas</li></a>
-    <p>asfad</p>
-
+    <div id="button">
+      <el-button round type="circle" src="button" class="button"><a href='/upload'>Let's Play!</a></el-button>
+    </div>
   </div>
 </template>
 
 <script scoped>
-import Logo from "./Logo.vue"
-import Button from "./Button.vue"
+import Logo from "./components/Logo.vue"
 
 export default {
   name: 'Landing',
   components: {
     Logo,
-    Button
   }
 }
 </script>
@@ -51,5 +48,12 @@ body {
 #item {
   margin: 0;
   padding: 0;
+}
+.button {
+  background-color: #C998C3;
+  color: #ffffff;
+  font-size: 24px;
+  width: 200px;
+  height: 75px;
 }
 </style>
