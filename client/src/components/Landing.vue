@@ -1,19 +1,19 @@
 <template>
   <div id="landing">
     <Logo />
-    <Button />
+    <body>
+      <p> hello! </p>
+    </body>
   </div>
 </template>
 
 <script scoped>
 import Logo from "./Logo.vue"
-import Button from "./Button.vue"
 
 export default {
   name: 'Landing',
   components: {
-    Logo,
-    Button
+    Logo
   }
 }
 </script>
@@ -31,6 +31,7 @@ body {
   height: 100%; 
 }
 #home {
+  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -46,6 +47,4 @@ body {
   margin: 0;
   padding: 0;
 }
-
-
 </style>
