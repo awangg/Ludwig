@@ -1,13 +1,20 @@
-<template lang="html">
-    <img src="musyncLogo" />
+<template>
+    <div id="logo">
+        <img src="./logo.png" alt="logo" class="logo">
+    </div>
 </template>
     
 <script>
-    import zapierLogo from 'images/zapier_logo.svg'
-    
     export default {
     }
 </script>
     
 <style lang="css">
-</style>
+.logo {
+    width: 400px;
+    position: center;
+    bottom: 43vh;
+    left: 19vw;
+    z-index: -1;
+}
+</style> 
