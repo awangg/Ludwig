@@ -11,8 +11,8 @@ export default {
     
 <style lang="css">
 .logo {
-  height: 120px;
-  width: 400px;
+  height: 550px;
+  width: 550px;
   position: center;
   bottom: 43vh;
   left: 19vw;
