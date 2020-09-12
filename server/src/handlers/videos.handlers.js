@@ -5,6 +5,8 @@ const { Readable } = require('stream')
 const MongoClient = mongodb.MongoClient
 const ObjectId = mongodb.ObjectID
 
+const validation = require('validation')
+
 var database;
 var bucket;
 MongoClient.connect(config.db.uri).then( (client) => {
@@ -22,6 +24,15 @@ const uploadMergedVideo = async (name, file) => {
   const readableTrackStream = new Readable()
   readableTrackStream.push(file.buffer)
   readableTrackStream.push(null)
+
+  // VALIDATES HERE
+  try {
+    validate = validation.validateVideo(readableTrackStream)
+    print(validate.message)
+  }
+  catch(err) {
+    reject(validate.message)
+  }
 
   let uploadStream = bucket.openUploadStream(name)
   let id = uploadStream.id
