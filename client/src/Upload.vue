@@ -1,22 +1,30 @@
 <template>
-  <div id="landing">
-    <Logo />
-    <Button/>
-    <a href='/upload'><li>asdfas</li></a>
-    <p>asfad</p>
-
+  <div id="Upload">
+    <p>hello</p>
   </div>
 </template>
 
 <script scoped>
-import Logo from "./Logo.vue"
-import Button from "./Button.vue"
+// import Logo from "./Logo.vue"
+// import Button from "./Button.vue"
 
 export default {
-  name: 'Landing',
+  name: 'Upload',
   components: {
+<<<<<<< HEAD:client/src/components/Upload.vue
+<<<<<<< HEAD
     Logo,
-    Button
+    AboutUs,
+    UploadButton,
+    CustButton
+=======
+    // Logo,
+    // Button
+>>>>>>> cf8841c84c37ed04a9047c85494b94569a295015
+=======
+    // Logo,
+    // Button
+>>>>>>> ef7a45b5cee0f68b8aa2c7de85628a708b0a1462:client/src/Upload.vue
   }
 }
 </script>
@@ -30,7 +38,6 @@ body {
   /* make it look decent enough #C8E7F5*/
   color: #000000;
   overflow-x: hidden;
-  overflow-y: hidden;
   position: relative;
   height: 100%; 
 }
@@ -41,7 +48,6 @@ body {
   text-align: center;
   color: #000000;
 }
-
 @media screen and (max-width: 399px) {
   body {
     overflow: visible;
