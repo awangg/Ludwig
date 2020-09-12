@@ -1,17 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Logo" src="./assets/logo.png">
-    <router-view></router-view>
+    <router-view />
   </div>
 </template>
 
 <script>
-import Router from 'vue-router'
 
 export default {
   name: 'App',
   components: {
-    
   }
 }
 </script>
