@@ -1,5 +1,5 @@
 <template>
-  <div id="upload">
+  <div id="Upload">
     <p>hello</p>
   </div>
 </template>
