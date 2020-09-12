@@ -13,6 +13,8 @@ export default {
     }
 
 }
+
+Vue.use(Button)
 </script>
 
 <style>
