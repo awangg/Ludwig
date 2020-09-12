@@ -1,9 +1,6 @@
 <template>
   <div id="landing">
     <Logo />
-    <body>
-      <p> hello! </p>
-    </body>
   </div>
 </template>
 
