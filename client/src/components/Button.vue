@@ -1,6 +1,8 @@
 <template>
   <div id="button">
+
       <el-button round type="circle" src="button" class="button"><a href='/upload'>Let's Play!</a></el-button>
+
   </div>
 </template>
     
