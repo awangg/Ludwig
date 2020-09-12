@@ -13,8 +13,6 @@ export default {
     Logo
   }
 }
-
-Vue.use(Button)
 </script>
 
 <style>
