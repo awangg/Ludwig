@@ -14,6 +14,7 @@ export default {
   background-color: #C998C3;
   color: #ffffff;
   font-size: 24px;
+  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
   width: 200px;
   height: 75px;
   margin-bottom:80%;
