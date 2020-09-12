@@ -1,9 +1,17 @@
 <template>
   <div id="landing">
-    <Logo />
+    <div id="container">
+    <div class = "left">
+         <span><Logo />
     <div id="button">
-      <a href='/upload'><el-button round type="circle" src="button" class="button">Let's Play!</el-button></a>
+      <a href='/upload'><el-button round type="circle" src="button" class="button">sync</el-button></a>
+    </div></span>
     </div>
+    <div class = "right">
+        <span>this app syncs music</span>
+    </div>
+</div>
+    
   </div>
 </template>
 
@@ -19,6 +27,18 @@ export default {
 </script>
 
 <style>
+.left, .right{float:left; width: 50%}
+
+.left {
+    position: relative; /* Declared position allows for location changes */
+    top: -5px; /* Moves the image 5px closer to the top of the page */
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+}
+
 body {
   direction: ltr;
   margin: 0;
