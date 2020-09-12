@@ -1,42 +1,68 @@
 <template>
   <div id="landing">
     <div id="container">
-    <div class = "left">
-         <span><Logo />
-    <div id="button">
-      <a href='/upload'><el-button round type="circle" src="button" class="button">sync</el-button></a>
-    </div></span>
+      <el-col :span="11"><div class="grid-content">
+        <span>
+          <div id="logo">
+              <img src="./assets/logo_final.png" class="logo">
+          </div>
+
+        <div id="button">
+          <a href='/upload'><el-button round type="circle" src="button" class="button">sync</el-button></a>
+        </div>
+        </span>
+      </div></el-col>
     </div>
-    <div class = "right">
-        <span>this app syncs music</span>
-    </div>
+  <div id="background"><div class = "grid-content2">
+      <span>this app doesn't sync music</span>
+  </div></div>    
 </div>
     
-  </div>
 </template>
 
 <script scoped>
-import Logo from "./components/Logo.vue"
+
 
 export default {
   name: 'Landing',
   components: {
-    Logo,
   }
 }
 </script>
 
 <style>
-.left, .right{float:left; width: 50%}
 
-.left {
-    position: relative; /* Declared position allows for location changes */
+
+.logo {
+  height: 400px;
+  width: 10px;
+  position: center;
+  margin-top: 5vh;
+}
+
+
+.el-col {
+    border-radius: 4px;
+     position: relative; /* Declared position allows for location changes */
     top: -5px; /* Moves the image 5px closer to the top of the page */
 }
 
-.right {
-  display: flex;
-  justify-content: center;
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+
+.grid-content2 {
+  margin-top:50%;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #E4CEE0; 
 }
 
 body {
@@ -73,8 +99,12 @@ body {
 .button {
   background-color: #C998C3;
   color: #ffffff;
+  font-family: "helvetica";
+  text-align: center;
   font-size: 24px;
   width: 200px;
   height: 75px;
 }
+
+
 </style>

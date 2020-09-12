@@ -18,7 +18,7 @@
             </el-form-item>
         </el-form>
 
-        <a href="/success"><el-button round type="circle" src="button" class="button">next</el-button></a>
+        <a href="/preview"><el-button round type="circle" src="button" class="button">next</el-button></a>
       </el-main>
   </div>
 </template>

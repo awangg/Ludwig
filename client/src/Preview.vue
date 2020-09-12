@@ -1,12 +1,24 @@
 <template>
-  <div id="success">
-      <p>Congratulations, you made music!</p>
+  <div id="preview">
+      <p>Preview</p>
+      <div id="container">
+      <el-col :span="11"><div class="grid-content">
+        <span>
+          <!--also link below to a download popup?-->
+          <a href="/success"><el-button round type="circle" src="button" class="button">download</el-button></a>
+        </span>
+      </div></el-col>
+    </div>
+    <!--insert audio preview track here-->
+  <div id="container"><div class = "grid-content">
+      <span><a href="/upload"><el-button round type="circle" src="button" class="button">try again</el-button></a></span>
+  </div></div>
   </div>
 </template>
 
 <script scoped>
 export default {
-  name: 'Success',
+  name: 'Preview',
   components: {
   },
   

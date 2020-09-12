@@ -15,9 +15,9 @@
         show-file-list>
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
-        <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500TB</div>
+        <div class="el-upload__tip" slot="tip">mp3/mp4 files with a size less than 500TB</div>
       </el-upload>
-      <a href="/description"><el-button round type="circle" src="button" class="button">next</el-button></a>
+      <a href="/description"><el-button round type="circle" src="button" class="button">let's customize!</el-button></a>
     </el-main>
   </div>
 </template>
@@ -48,7 +48,7 @@ export default {
       },
       beforeRemove(file) {
         this.fileList.remove(file)
-        return this.$confirm(`Cancel the transfert of ${ file.name } ?`);
+        return this.$confirm(`Cancel the transfer of ${ file.name } ?`);
       }
     }
 }
@@ -91,6 +91,7 @@ body {
   font-size: 24px;
   width: 100px;
   height: 40px;
+  text-align: center;
 }
 .button:hover {
    background-color: #E4CEE0;
