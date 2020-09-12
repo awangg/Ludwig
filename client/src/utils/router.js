@@ -5,6 +5,7 @@ import Landing from '../Landing.vue';
 import Upload from '../Upload.vue';
 import Description from '../Description.vue';
 import Success from '../Success.vue';
+import AboutUs from '../AboutUs.vue';
 
 Vue.use(VueRouter);
 
@@ -28,6 +29,11 @@ const routes = [
     path: '/success',
     name: 'success',
     component: Success
+  },
+  {
+    path: '/aboutus',
+    name: 'aboutus',
+    component:  AboutUs
   }
   
 ];
