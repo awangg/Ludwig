@@ -73,7 +73,7 @@ body {
   margin-top: 10px;
   background-color: #C998C3;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 20px;
   width: 120px;
   height: 40px;
   font-family: 'Kumbh Sans', sans-serif;
