@@ -1,4 +1,4 @@
-const config = require('../../config')
+const { database, bucket } = require('../../app/mongo')
 const mongodb = require('mongodb')
 const { Readable } = require('stream')
 const fs = require('fs')
@@ -8,25 +8,11 @@ const wavDecoder = require('wav-decoder')
 const PitchFinder = require('pitchfinder')
 const SoxCommand = require('sox-audio')
 
-const MongoClient = mongodb.MongoClient
 const ObjectId = mongodb.ObjectID
 const detector = new PitchFinder.YIN()
 const TimeFormat = SoxCommand.TimeFormat
 
 const { video } = require('../models')
-
-var database;
-var bucket;
-MongoClient.connect(config.db.uri).then( (client) => {
-  database = client.db('musync')
-  bucket = new mongodb.GridFSBucket(database, {
-    bucketName: 'videos'
-  })
-}).catch( err => {
-  console.log('Error loading DB')
-  console.log(err)
-  process.exit(1)
-})
 
 const uploadMergedVideo = async (name, file) => {
   console.log(file)
