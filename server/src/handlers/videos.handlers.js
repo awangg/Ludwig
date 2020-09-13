@@ -73,58 +73,133 @@ const getVideoById = async (videoId) => {
   })
 }
 
-const mergeVideos = async (files, meta) => {
-  const paths = await tempSaveFiles(files)
-  paths.push(path.join(os.tmpdir(), 'final1'))
-  paths.push(path.join(os.tmpdir(), 'final2'))
-  console.log(paths)
+const mergeVideos = async (meta) => {
+  console.log(meta)
+  // Get All Video Ids
+  const videos = await database.collection('videos.files').find({})
+  let ids = []
+  await videos.forEach( (video) => { ids.push(new ObjectId(video._id)) })
+  console.log('ids: ' + ids)
 
-  const decodedVideo1 = wavDecoder.decode.sync(files.video1[0].buffer)
-  const decodedVideo2 = wavDecoder.decode.sync(files.video2[0].buffer)
+  let videoBuffers = await generateBuffers(ids)
+  // return videoBuffers[0]
 
-  const offsets = await findStartPoints(decodedVideo1, decodedVideo2, meta)
-  console.log(offsets)
-  console.log(TimeFormat.formatTimeAbsolute(offsets[0]))
-  console.log(TimeFormat.formatTimeAbsolute(offsets[1]))
+  let offsets = []
+  videoBuffers.forEach( async (buffer) => {
+    let decoded = wavDecoder.decode.sync(buffer)
+    offsets.push(findStartPoint(decoded, meta))
+  })
 
-  const outputStream = fs.createWriteStream('./output.wav')
+  let commandPromise = new Promise( (resolve, reject) => {
+    let paths = []    
+    ids.forEach( async (id, index) => {
+      let p = path.join(os.tmpdir(), 'video'+index)
+      let command = SoxCommand()
+        .input(videoBucket.openDownloadStream(id))
+        .inputFileType('wav')
+        .output(p)
+        .outputFileType('wav')
+        .outputSampleRate(44100)
+        .trim(await offsets[index])
+        .run()
+      paths.push(p)
+      if(index === ids.length - 1) {
+        resolve(paths)
+      }
+    })
+  })
 
-  const trimFirst = SoxCommand()
-    .input(paths[0])
-    .inputFileType('wav')
-    .output(paths[2])
-    .outputFileType('wav')
-    .outputSampleRate(44100)
-    .trim(TimeFormat.formatTimeAbsolute(offsets[0]))
-    .run()
-  
-  const trimSecond = SoxCommand()
-    .input(paths[1])
-    .inputFileType('wav')
-    .output(paths[3])
-    .outputSampleRate(44100)
-    .outputFileType('wav')
-    .trim(TimeFormat.formatTimeAbsolute(offsets[1]))
-    .run()
+  let outputPath = path.join(os.tmpdir(), 'merged')
+  console.log(outputPath)
+  let uploadStream = videoBucket.openUploadStream('merged')
+  let id = uploadStream.id
 
-  const merge = SoxCommand()
-    .input(paths[2])
-    .input(paths[3])
-    .output(outputStream)
-    .outputFileType('wav')
-    .combine('merge')
-    .run()
-  
+  commandPromise.then( async (paths) => {
+    let mergeCommand = await SoxCommand()
+      .input(paths[0])
+      .input(paths[1])
+      .output(outputPath)
+      .outputFileType('wav')
+      .combine('mix')
+      .run()
+
+    mergeCommand.on('end', () => {
+      console.log('merge success')
+      let readStream = fs.createReadStream(outputPath)
+      readStream.pipe(uploadStream)
+    })
+  })
+
   return new Promise( (resolve, reject) => {
-    outputStream.on('error', (error) => {
+    uploadStream.on('error', error => {
       reject(error)
     })
-
-    outputStream.on('finish', () => {
-      resolve('Woot')
+  
+    uploadStream.on('finish', () => {
+      resolve(id)
     })
   })
 }
+
+const generateBuffers = async (ids) => {
+  let bufferArrays = []
+  await ids.forEach( (id) => {
+    let stream = videoBucket.openDownloadStream(id)
+    bufferArrays.push(new Promise( (resolve, reject) => {
+      let chunks = []
+      stream.on('data', (chunk) => {
+        chunks.push(chunk)
+      })
+      stream.on('error', error => {
+        reject(error)
+      })
+      stream.on('end', () => {
+        resolve(chunks)
+      })
+    }))
+  })
+  return new Promise( (resolve, reject) => {
+    Promise.all(bufferArrays).then( () => {
+      let buffers = []
+      bufferArrays.forEach( async (promise) => {
+        let array = await promise
+        buffers.push(Buffer.concat(array))
+      })
+      resolve(buffers)
+    })
+  })
+}
+
+const findStartPoint = async (decoded, meta) => {
+  const data = decoded.channelData[0]
+
+  try {
+    const pitch = PitchFinder.default.frequencies(detector, data, {
+      tempo: parseInt(meta.tempo),
+      quantization: parseInt(meta.specificity)
+    })
+
+    const offset = await computeTimeOffset(pitch, meta)
+    console.log(offset)
+    if(offset < 0) throw new Error('No Starting Pitch Found')
+
+    return TimeFormat.formatTimeAbsolute(offset)
+  } catch (err) {
+    console.log(err)
+    throw new Error('Error on Pitch Calculation')
+  }
+}
+
+const computeTimeOffset = (data, meta) => {
+  for(let index = 0; index < data.length; index++) {
+    frequency = data[index]
+    if(frequency >= 30 && frequency <= 2000) {
+      return (((( (index + 1) / parseInt(meta.specificity) ) / parseInt(meta.tempo)) * 60) - .75).toFixed(2)
+    }
+  }
+  return -1
+}
+
 
 const tempSaveFiles = (files) => {
   let promises = []
@@ -167,42 +242,6 @@ const tempSaveFiles = (files) => {
       resolve([ path1, path2 ])
     })
   })
-}
-
-const findStartPoints = async (decoded1, decoded2, meta) => {
-  const data1 = decoded1.channelData[0]
-  const data2 = decoded2.channelData[0]
-
-  try {
-    const pitch1 = PitchFinder.default.frequencies(detector, data1, {
-      tempo: meta.tempo,
-      quantization: meta.specificity
-    })
-    const pitch2 = PitchFinder.default.frequencies(detector, data2, {
-      tempo: meta.tempo,
-      quantization: meta.specificity
-    })
-
-    const offset1 = await computeTimeOffset(pitch1, meta)
-    const offset2 = await computeTimeOffset(pitch2, meta)
-    if(offset1 < 0 || offset2 < 0) throw new Error('No Starting Pitch Found')
-
-    return [ offset1, offset2 ]
-
-  } catch (err) {
-    console.log(err)
-    throw new Error('Error on Pitch Calculation')
-  }
-}
-
-const computeTimeOffset = (data, meta) => {
-  for(let index = 0; index < data.length; index++) {
-    frequency = data[index]
-    if(frequency >= 30 && frequency <= 2000) {
-      return (((( (index + 1) / meta.specificity ) / meta.tempo) * 60) - .5).toFixed(2)
-    }
-  }
-  return -1
 }
 
 module.exports = {
