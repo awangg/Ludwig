@@ -73,7 +73,7 @@ export default {
 }
 
 .grid-content2 {
-  margin-top:20%;
+  margin-top:21%;
 }
 
 #background {
