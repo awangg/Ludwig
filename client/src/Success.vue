@@ -1,6 +1,6 @@
 <template>
   <div id="success">
-      <p>Congratulations, you made music!</p>
+      <p src="congrats" class = "congrats">Congratulations, you made music!</p>
       <span><a href="/upload"><el-button round type="circle" src="success-button" class="success-button">let's make more!</el-button></a></span>
   </div>
 </template>
@@ -54,5 +54,9 @@ body {
   width: 200px;
   height: 75px;
   margin-top: 100px;
+}
+
+.congrats {
+  font-size: 30px;
 }
 </style>

@@ -1,15 +1,16 @@
 <template>
   <div id="AboutUs">
-    <h1>About Us</h1>
+    <h1 class = "about-title">About Us</h1>
     <img src="~@/assets/logo_final.png" alt="small_logo" class="small_logo">
     <img src="~@/assets/andy.jpg" alt="face" class="face">
     <img src="~@/assets/claire_pic.png" alt="face" class="face">
     <img src="~@/assets/megan_new.png" alt="face" class="face">
     <img src="~@/assets/Thomas_Yeum_copy.jpg" alt="face" class="face">
     
-    <h4>We are Andy, Claire, Megan, and Thomas, 4 sophomores at Rice University. 
-        musync was designed to help music educators, professional orchestras, and individual
-        creators make music online efficiently. Let's focus on the music, not the syncing! </h4>
+    <h4 class='intro'> We are Andy, Claire, Megan, and Thomas, 4 sophomores at Rice University 
+        passionate about making music more accessible. musync was designed to help music educators, 
+        professional orchestras, and individual creators make music online efficiently. 
+        Let's focus on the music, not the syncing! </h4>
   </div>
 </template>
 
@@ -35,18 +36,26 @@ body {
   height: 100%; 
 }
 
+.about-title {
+  font-size: 36px;
+}
+.intro {
+  font-size: 20px;
+}
+
 .small_logo {
   width: 150px;
   height: 85px;
-  margin-top: -300px;
-  margin-bottom: 30px;
-  margin-right:1300px;
+  margin-top: -400px;
+  margin-bottom: 20px;
+  margin-right:1200px;
 }
 .face {
   width: 300px;
   height: 350px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
 }
 #home {
   font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
