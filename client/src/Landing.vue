@@ -97,6 +97,7 @@ body {
   width: 200px;
   height: 75px;
   margin-top: 100px;
+  padding-bottom: 9px; 
 }
 
 .slogan {
