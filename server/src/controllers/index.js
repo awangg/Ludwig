@@ -7,5 +7,6 @@ router.get('/healthCheck', (req, res) => {
 
 router.use('/videos', require('./videos.controller'))
 router.use('/auth', require('./auth.controller'))
+router.use('/assignments', require('./assignment.controller'))
 
 module.exports = router
