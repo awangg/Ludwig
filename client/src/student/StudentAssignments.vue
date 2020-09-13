@@ -4,7 +4,7 @@
      <el-col :span="11"><div class="grid-content">
         <span>
         <div class="title">
-          Assignments
+          Current Assignments
         </div>
         </span>
       </div></el-col>
