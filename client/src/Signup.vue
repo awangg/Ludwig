@@ -1,74 +1,31 @@
 <template>
-  <div id="signup">
-      <h1>Welcome to Ludwig</h1>
-      <el-row gutter="20">
-          <el-col :span="10">
-              <h4>For Students</h4>
-            <el-form ref="form" :model="studentSignup" label-width="120px">
-                <el-form-item label="First Name">
-                    <el-input v-model="studentSignup.first"></el-input>
-                </el-form-item>
-                <el-form-item label="Last Name">
-                    <el-input v-model="studentSignup.last"></el-input>
-                </el-form-item>
-                <el-form-item label="Password">
-                    <el-input v-model="studentSignup.password"></el-input>
-                </el-form-item>
-                <el-form-item label="Input Your Class Code">
-                    <el-input v-model="studentSignup.classCode"></el-input>
-                </el-form-item>
-                <el-form-item label="Email">
-                    <el-input v-model="studentSignup.email"></el-input>
-                </el-form-item>
-            </el-form>
-            <el-button>NOT DONE YET (SUBMIT)</el-button>
-          </el-col>
-          <el-col :span="10">
-              <h4>For Educators</h4>
-            <el-form ref="form" :model="teacherSignup" label-width="120px">
-                <el-form-item label="First Name">
-                    <el-input v-model="teacherSignup.first"></el-input>
-                </el-form-item>
-                <el-form-item label="Last Name">
-                    <el-input v-model="teacherSignup.last"></el-input>
-                </el-form-item>
-                <el-form-item label="Password">
-                    <el-input v-model="teacherSignup.password"></el-input>
-                </el-form-item>
-                <el-form-item label="Create New Class Code">
-                    <el-input v-model="teacherSignup.classCode"></el-input>
-                </el-form-item>
-                <el-form-item label="Email">
-                    <el-input v-model="teacherSignup.email"></el-input>
-                </el-form-item>
-            </el-form>
-            <el-button>NOT DONE YET (SUBMIT)</el-button>
-          </el-col>
-
-      </el-row>
-
+  <div id="login">
+      <div class="login-page">
+          <p src = "welcome" class = "welcome">Welcome to Ludwig</p>
+  <div class="form">
+    <form class="login-form">
+      <input type="firstname" placeholder="first name"/>
+      <input type="lastname" placeholder="last name"/>
+      <input type="password" placeholder="password"/>
+      <input type="code" placeholder="class code"/>
+      <input type="email" placeholder="email"/>
+      <a href='/login'><el-button round type="circle" src="button" class="button">sign up</el-button></a>
+      <p class="message">Already registered? <a href="/signup">Log In</a></p>
+    </form>
+  </div>
+</div>
   </div>
 </template>
 
 <script scoped>
 export default {
-  name: 'signup',
+  name: 'Login',
   components: {
   },
   data() {
       return {
-        studentSignup: {
-          firstName: '',
-          lastName: '',
+        loginList: {
           password: '',
-          classCode: '',
-          email: ''
-        },
-        teacherSignup: {
-          firstName: '',
-          lastName: '',
-          password: '',
-          classCode: '',
           email: ''
         }
       }
@@ -83,32 +40,95 @@ export default {
 </script>
 
 <style scoped>
-body {
-  direction: ltr;
-  margin: 0;
-  padding: 0;
-  background-color:#ffffff;
-  /* make it look decent enough #C8E7F5*/
-  color: #000000;
-  overflow-x: hidden;
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.welcome{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+.form {
   position: relative;
-  height: 100%; 
-}
-#home {
-  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
   text-align: center;
-  color: #000000;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-@media screen and (max-width: 399px) {
-  body {
-    overflow: visible;
-    overflow-x: hidden;
-  }
+.form input {
+  font-family: Helvetica, sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
-#item {
-  margin: 0;
+.form button {
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #C998C3;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #E4CEE0;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #C998C3;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
   padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+
+body {
+  background: #E4CEE0; 
+  background: -webkit-linear-gradient(right, #E4CEE0, #E4CEE0);
+  background: -moz-linear-gradient(right, #E4CEE0, #E4CEE0);
+  background: -o-linear-gradient(right, #E4CEE0, #E4CEE0);
+  background: linear-gradient(to left, #E4CEE0, #E4CEE0);
+  font-family: Helvetica, sans-serif, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
 }
 </style>
