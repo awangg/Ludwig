@@ -9,6 +9,8 @@ import AboutUs from '../AboutUs.vue';
 import Success from '../Success.vue';
 import Login from '../Login.vue';
 import Signup from '../Signup.vue';
+import StudentHome from '../student/StudHomepage.vue';
+import EducatorHome from '../teacher/EduHomepage.vue';
 
 Vue.use(VueRouter);
 
@@ -52,6 +54,16 @@ const routes = [
   path: '/signup',
   name: 'signup',
   component: Signup
+  },
+  {
+  path: '/studentHome',
+  name: 'studentHome',
+  component: StudentHome
+  },
+  {
+    path: '/educatorHome',
+    name: 'educatorHome',
+    component: EducatorHome
   }
 ];
 
