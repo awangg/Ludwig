@@ -13,9 +13,9 @@
     </div>
   <div id="background"><div class = "grid-content2">
       <br><a href='/AboutUs'><el-button round type="circle" src="button" class="button1">about us</el-button></a>
-      <span src = "slogan" class = "slogan">Bringing students and music educators together.</span>
-      <br><a href='/login'><el-button round type="circle" src="button" class="button">login</el-button></a>
-      <br><a href='/signup'><el-button round type="circle" src="button" class="button">signup</el-button></a>
+      <p src = "slogan" class = "slogan">Bringing students and music educators together.</p>
+      <br><a href='/login'><el-button round type="circle" src="button" class="button2">login</el-button></a>
+      <br><a href='/signup'><el-button round type="circle" src="button" class="button3">signup</el-button></a>
       
   </div></div>    
 </div>
@@ -42,7 +42,7 @@ export default {
 }
 .el-col {
     border-radius: 4px;
-     position: relative; /* Declared position allows for location changes */
+    position: relative; /* Declared position allows for location changes */
     top: -5px; /* Moves the image 5px closer to the top of the page */
 }
 
@@ -101,32 +101,49 @@ body {
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  font-size: 24px;
-  width: 200px;
-  height: 75px;
-  margin-top: 20px;
-  padding-bottom: 0px;
+  font-size: 20px;
+  width: 120px;
+  height: 50px;
+  margin-left: 400px;
+  padding-top: -100px;
 }
-.button {
+.button2 {
   background-color: #C998C3;
   color: #ffffff;
+  line-height: 10px;
+  background-position: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  font-size: 24px;
-  width: 200px;
-  height: 75px;
-  margin-top: 100px;
-  padding-bottom: 9px; 
+  font-size: 30px;
+  width: 120px;
+  height: 60px;
+  margin-bottom: 15px;
 }
+.button3 {
+  background-color: #C998C3;
+  color: #ffffff;
+  line-height: 10px;
+  background-position: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 30px;
+  width: 135px;
+  height: 60px;
+  top: 50px;
+  padding-top: 100px;
+}
+
 
 .slogan {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 50px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #000000;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 
