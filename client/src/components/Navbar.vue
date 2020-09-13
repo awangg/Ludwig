@@ -1,5 +1,6 @@
 <template>
   <div id="navbar" margin-top="0px" width-min="100%" clear="left" display="inline-block" height="40px">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
     <header margin-top="0px">
       <aside margin-top="0px">
         <el-row>
@@ -10,7 +11,7 @@
             <p>  </p>
           </el-col>
           <el-col :span="4">
-            <el-button><a href="\">Log Out</a></el-button>
+            <a href='/'><el-button round type="circle" src="button" class="button1">log out (NOT ROUTED) </el-button></a>
           </el-col>
         </el-row>
       </aside>
@@ -30,23 +31,26 @@ export default {
   margin-top:0px;
 }
 .logo {
-
   height: 80px;
   width: 130px;
   position: left;
   float:left;
+  margin-top: -40px;
+  margin-left: 10px;
 }
 
-.button {
+
+.button1 {
   background-color: #C998C3;
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
-  font-size: 24px;
-  width: 200px;
-  height: 75px;
-  margin-top: 100px;
-  padding-bottom: 9px; 
+  font-size: 20px;
+  width: 250px;
+  height: 50px;
+  margin-right: 50px;
+  margin-top: -30px;
+
 }
 
 </style> 
