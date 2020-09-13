@@ -25,6 +25,9 @@ Now you can demo the Ludwig platform!
 ## Contributors
 
 Andy Wang - [@awangg](https://github.com/awangg)
+
 Thomas Yeum - [@yeumthomas](https://github.com/yeumthomas)
+
 Claire Xu - [@clairexu5](https://github.com/clairexu5)
+
 Megan Xiao - [@megancx](https://github.com/megancx)
