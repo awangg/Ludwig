@@ -13,12 +13,14 @@
         <span>
          <Logo />
         <div class="title">
-          Ludwig
+          ludwig
         </div>
         </span>
       </div></el-col>
     </div>
   <div id="background"><div class = "grid-content2">
+
+      <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
       <p src = "slogan" class = "slogan">Bringing music educators and students together during the era of COVID-19.</p>
       <el-row>
         <el-col :span="7"><p>  </p></el-col>
@@ -49,9 +51,9 @@ export default {
 <style>
 
 .title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 60px;
 }
 .el-col {
     border-radius: 4px;
@@ -91,7 +93,7 @@ body {
 }
 
 #home {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -112,7 +114,7 @@ body {
 .button1{
   background-color: #C998C3;
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
   font-size: 20px;
   width: 120px;
@@ -126,7 +128,7 @@ body {
   color: #ffffff;
   line-height: 10px;
   background-position: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
   font-size: 30px;
   width: 120px;
@@ -137,7 +139,7 @@ body {
   color: #ffffff;
   line-height: 10px;
   background-position: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
   font-size: 30px;
   width: 135px;
@@ -147,13 +149,13 @@ body {
 
 
 .slogan {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-weight: bold;
   font-size: 50px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #000000;
+  color: #3C3C3C;
   margin-left: 15px;
   margin-right: 15px;
 }
