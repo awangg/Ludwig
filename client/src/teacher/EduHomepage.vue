@@ -6,7 +6,8 @@
         <div class="title">
           Assignments
         </div>
-        <el-button round type="circle" src="button" class="button">Create New Assignment</el-button>
+        <el-button round type="circle" src="button" class="button" id="show-modal" @click="showModal = true" >Create New Assignment</el-button>
+         
         </span>
       </div></el-col>
       <!--need to get background color to not cover over navbar-->
@@ -30,9 +31,10 @@ export default {
         navbar,
         description
     }
+
 }
 </script>
-    
+
 <style scoped lang="css">
 
 .navbar {
