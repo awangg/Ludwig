@@ -1,6 +1,7 @@
 <template>
   <div id="success">
       <p>Congratulations, you made music!</p>
+      <span><a href="/upload"><el-button round type="circle" src="button" class="button">let's make more!</el-button></a></span>
   </div>
 </template>
 
