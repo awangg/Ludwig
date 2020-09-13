@@ -1,0 +1,133 @@
+swagger: "2.0"
+info:
+  description: "API endpoints for Musync project"
+  version: "1.0.0"
+  title: "Musync"
+host: "localhost:8080"
+basePath: "/api/v1"
+tags:
+- name: "auth"
+  description: "User authentication and authorization"
+- name: "video"
+  description: "Storage for merged video files"
+- name: "user"
+  description: "Operations about user"
+schemes:
+- "http"
+paths:
+  /video:
+    get:
+      tags:
+      - "video"
+      summary: "Get all videos related to the user"
+      description: ""
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Retrieved videos"
+        "401":
+          description: "Unauthorized"
+    post:
+      tags:
+      - "video"
+      summary: "Upload a new video"
+      description: ""
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "video"
+        description: "The video to be uploaded"
+        required: true
+        schema:
+          $ref: "#/definitions/Video"
+      responses:
+        "201":
+          description: "Upload success"
+        "401":
+          description: "Unauthorized"
+        "405":
+          description: "Invalid input"
+  /video/{videoId}:
+    get:
+      tags:
+      - "video"
+      summary: "Get specific video"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "videoId"
+        type: "string"
+        description: "ID of desired video"
+        required: true
+      responses:
+        "200":
+          description: "Retrieved video"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Video not found"
+    put:
+      tags:
+      - "video"
+      summary: "Edit name of video"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "videoId"
+        type: "string"
+        description: "ID of desired video"
+        required: true
+      - in: "body"
+        name: "name"
+        description: "Object with new name"
+        required: true
+        schema:
+          $ref: "#/definitions/Name"
+      responses:
+        "200":
+          description: "Retrieved video"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Video not found"
+    delete:
+      tags:
+      - "video"
+      summary: "Deletes specific video"
+      description: ""
+      produces:
+      - "application/json"
+      parameters:
+      - in: "path"
+        name: "videoId"
+        type: "string"
+        description: "ID of desired video"
+        required: true
+      responses:
+        "200":
+          description: "Deleted video"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Video not found"
+definitions:
+  Name:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+  Video:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      signedUrl:
+        type: "string"
