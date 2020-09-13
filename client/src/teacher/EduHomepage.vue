@@ -45,6 +45,8 @@ export default {
 .title{
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 24px;
+  margin-top: 50px;
+  align: center;
 }
 .logo {
   height: 80px;

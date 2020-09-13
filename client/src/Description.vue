@@ -2,13 +2,10 @@
   <div id="description">
       <el-main padding="100px">
         <el-form :label-position="'left'" :model="inputForm">
-            <el-form-item label="Merged File Name">
-                <el-input v-model="inputForm.filename"></el-input>
-            </el-form-item>
-            <el-form-item label="Description">
+            <el-form-item label="Tempo">
                 <el-input v-model="inputForm.description"></el-input>
             </el-form-item>
-            <el-form-item label="Beginning Pitch">
+            <el-form-item label="Specificity">
                 <el-input v-model="inputForm.beginningPitch"></el-input>
             </el-form-item>
         </el-form>
