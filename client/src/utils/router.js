@@ -8,7 +8,7 @@ import Preview from '../Preview.vue';
 import AboutUs from '../AboutUs.vue';
 import Success from '../Success.vue';
 import Signup from '../Signup.vue';
-import StudentHome from '../student/StudHomepage.vue';
+import StudentAssignments from '../student/StudentAssignments.vue';
 import EducatorHome from '../teacher/EduHomepage.vue';
 
 Vue.use(VueRouter);
@@ -50,9 +50,9 @@ const routes = [
   component: Signup
   },
   {
-  path: '/studentHome',
-  name: 'studentHome',
-  component: StudentHome
+  path: '/studentassignments',
+  name: 'studentAssignments',
+  component: StudentAssignments
   },
   {
     path: '/educatorHome',

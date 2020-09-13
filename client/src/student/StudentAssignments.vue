@@ -1,32 +1,30 @@
 <template>
-  <div id="studhomepage">
+  <div id="studentassignments">
     <navbar/>
      <el-col :span="11"><div class="grid-content">
         <span>
         <div class="title">
           Find Your Sheet Music
         </div>
-        <selector/>
         </span>
       </div></el-col>
       <div id="background"><div class = "grid-content2">
 
       <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
       <p src = "slogan" class = "title">Upload Your Music</p>
+      <upload/>
   </div>
-  <selector/>
   </div></div>
 </template>
     
 <script>
 import navbar from "../components/Navbar"
-import selector from "../components/Sheetmusic"
 import upload from "../Upload.vue"
 export default {
-    name:"studhomepage",
+    name:"studentassignments",
     components:{
         navbar,
-        selector
+        upload
     }
 }
 </script>
