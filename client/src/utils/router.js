@@ -7,7 +7,6 @@ import Description from '../Description.vue';
 import Preview from '../Preview.vue';
 import AboutUs from '../AboutUs.vue';
 import Success from '../Success.vue';
-import Login from '../Login.vue';
 import Signup from '../Signup.vue';
 import StudentHome from '../student/StudHomepage.vue';
 import EducatorHome from '../teacher/EduHomepage.vue';
@@ -44,11 +43,6 @@ const routes = [
     path: '/success',
     name: 'success',
     component: Success
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: Login
   },
   {
   path: '/signup',
