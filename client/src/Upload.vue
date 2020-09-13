@@ -54,7 +54,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 body {
   direction: ltr;
   margin: 0;

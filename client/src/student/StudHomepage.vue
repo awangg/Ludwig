@@ -8,7 +8,7 @@
 import navbar from "../components/Navbar"
 export default {
     name:"studhomepage",
-    components: {
+    components:{
         navbar
     }
 }
