@@ -14,7 +14,7 @@
         multiple
         show-file-list>
         <i class="el-icon-upload"></i>
-        <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
+        <div class="el-upload__text">Drop files here or <em>click to upload</em></div>
         <div class="el-upload__tip" slot="tip">mp3/mp4 files with a size less than 500TB</div>
       </el-upload>
       <a href="/description"><el-button round type="circle" src="button" class="button">let's customize!</el-button></a>

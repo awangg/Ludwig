@@ -13,6 +13,7 @@
     </div>
   <div id="background"><div class = "grid-content2">
       <span>this app doesn't sync music</span>
+      <br><a href='/upload'><el-button round type="circle" src="button" class="button">about us</el-button></a><br>
   </div></div>    
 </div>
     
