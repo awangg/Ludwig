@@ -1,6 +1,7 @@
 <template>
   <div id="login">
       <div class="login-page">
+          <p src = "welcome" class = "welcome">Welcome Back</p>
   <div class="form">
     <form class="login-form">
       <input type="text" placeholder="username"/>
@@ -40,6 +41,11 @@ export default {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
+}
+.welcome{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
 }
 .form {
   position: relative;
@@ -114,6 +120,10 @@ export default {
 
 body {
   background: #E4CEE0; 
+  background: -webkit-linear-gradient(right, #E4CEE0, #E4CEE0);
+  background: -moz-linear-gradient(right, #E4CEE0, #E4CEE0);
+  background: -o-linear-gradient(right, #E4CEE0, #E4CEE0);
+  background: linear-gradient(to left, #E4CEE0, #E4CEE0);
   font-family: Helvetica, sans-serif, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
