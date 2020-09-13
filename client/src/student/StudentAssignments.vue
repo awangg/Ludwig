@@ -32,6 +32,7 @@ export default {
     
 <style scoped lang="css">
 
+
 .navbar {
   margin-top:0px;
 }
