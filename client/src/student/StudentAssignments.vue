@@ -21,6 +21,7 @@
         drag
         name="video"
         :headers="headers"
+        :on-success="createNewAssignment"
         action="http://localhost:3000/api/v1/videos"
         show-file-list>
         <i class="el-icon-upload"></i>
@@ -62,6 +63,9 @@ export default {
           let response = res.data
           this.ids = response
         })
+      },
+      createNewAssignment() {
+        this.getAllAssignments()
       },
       getSpecificAssignment(id) {
         axios({

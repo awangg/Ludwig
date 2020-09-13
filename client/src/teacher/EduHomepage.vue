@@ -88,7 +88,7 @@ export default {
         })
       },
       createNewAssignment() {
-        console.log('lol')
+        this.getAllAssignments()
       },
       getSpecificAssignment(id) {
         axios({
