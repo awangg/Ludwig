@@ -45,6 +45,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> 
         <el-button round type="circle" src="button" class="buttonsub" v-on:click="mergeAssignments">Submit</el-button>
       </el-main>
+
+      <h4 v-if="showSpinner"> Loading... </h4>
       
   </div>
   </div></div>
@@ -68,7 +70,8 @@ export default {
         },
         headers: {
           'Authorization': 'Bearer ' + this.$cookies.get('token')
-        }
+        },
+        showSpinner: false
       }
     },
     created() {
@@ -111,6 +114,7 @@ export default {
         })
       },
       mergeAssignments() {
+        this.showSpinner = true
         axios({
           method: 'post',
           url: `http://localhost:3000/api/v1/videos/merge`,
@@ -123,7 +127,25 @@ export default {
           }
         }).then( (res) => {
           let response = res.data
-          console.log(response)
+          this.showSpinner = false
+          axios({
+            method: 'get',
+            url: `http://localhost:3000/api/v1/videos/${response}`,
+            headers: {
+              'Authorization': 'Bearer ' + this.$cookies.get('token')
+            },
+            responseType: 'blob'
+          }).then( (res) => {
+            let response2 = res.data
+            const data = window.URL.createObjectURL(response2)
+            let link = document.createElement('a')
+            link.href = data
+            link.download = 'sync.wav'
+            link.click()
+            setTimeout(function() {
+              window.URL.revokeObjectURL(data)
+            }, 100)
+          })
         })
       }
     }
