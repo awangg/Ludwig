@@ -1,5 +1,6 @@
 <template>
   <div id="AboutUs">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
     <h1 class = "about-title">About Us</h1>
     <img src="~@/assets/logo_final.png" alt="small_logo" class="small_logo">
     <img src="~@/assets/andy.jpg" alt="face" class="face">
@@ -37,9 +38,11 @@ body {
 }
 
 .about-title {
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 36px;
 }
 .intro {
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 20px;
   margin-left: 15px;
   margin-right: 15px; 
@@ -60,7 +63,7 @@ body {
   margin-top: 10px;
 }
 #home {
-  font-family: "~@/assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  font-family: 'Kumbh Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
