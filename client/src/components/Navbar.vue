@@ -11,7 +11,11 @@
             <p>  </p>
           </el-col>
           <el-col :span="4">
+<<<<<<< HEAD
             <a href='/'><el-button round type="circle" src="button" class="button1">log out (NOT ROUTED) </el-button></a>
+=======
+            <el-button><a href="\">Log Out</a></el-button>
+>>>>>>> f1542f6973cbbb1fc085c365255ec014a963a3fe
           </el-col>
         </el-row>
       </aside>
