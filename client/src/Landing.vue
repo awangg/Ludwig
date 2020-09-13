@@ -62,8 +62,8 @@ export default {
   created() {
     if(this.$cookies.get('token')) {
       let roles = this.$cookies.get('roles')
-      if(roles.includes('teacher')) this.$router.push('educatorHome')
-      else if(roles.includes('student')) this.$router.push('studentHome')
+      if(roles.includes('teacher')) this.$router.push({ name: 'educatorHome' })
+      else if(roles.includes('student')) this.$router.push({ name: 'studentAssignments' })
     }
   },
   methods: {
@@ -84,8 +84,8 @@ export default {
             this.$cookies.set('email', response.email)
             this.$cookies.set('token', response.token)
 
-            if(response.roles.includes('teacher')) this.$router.push('educatorHome')
-            else if(response.roles.includes('student')) this.$router.push('studentHome')
+            if(response.roles.includes('teacher')) this.$router.push({ name: 'educatorHome' })
+            else if(response.roles.includes('student')) this.$router.push({ name: 'studentAssignments' })
 
           } else {
             console.log(response.error)
