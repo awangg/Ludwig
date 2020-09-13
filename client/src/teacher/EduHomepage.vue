@@ -1,44 +1,34 @@
 <template>
   <div id="eduhomepage">
     <navbar/>
-    <el-row gutter="20">
-      <el-col :span="4"><p> </p></el-col>
-      <el-col :span="16">
-        <el-col :span="4">
-        </el-col>
-        <el-col :span="20">
-          <div align="left">
-            <h1 margins="-25 0">Welcome to {CLASSNAME}</h1>
-            <h6 margin="-25 0">Your class code is {CODE}</h6>
-            <el-button align="left">Create New Assignment</el-button>
-          </div>
+     <el-col :span="11"><div class="grid-content">
+        <span>
+        <div class="title">
+          Assignments
+        </div>
+        <el-button round type="circle" src="button" class="button">Create New Assignment</el-button>
+        </span>
+      </div></el-col>
+      <!--need to get background color to not cover over navbar-->
+      <div id="background"><div class = "grid-content2">
 
-          <!-- ALL CLASSES THAT TEACHER HAS ACCESS TO GOES HERE -->
-          <!-- <ul id="example-1">
-          <li v-for="item in items" :key="item.message">
-            {{ item.message }}
-          </li>
-          </ul> -->
-
-          <i class="el-icon-view"></i>
-          <i class="el-icon-delete"></i>
-        </el-col>
-      </el-col>
-      <el-col :span="4"><p> </p></el-col>
-    </el-row>
-    <!-- <footer/> -->
+      <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+      <p src = "slogan" class = "title">Mix Recordings</p>
+      <description/>
+      
   </div>
+  </div></div>
 </template>
     
 <script>
 import navbar from "../components/Navbar"
-// import footer from "../components/Footer"
+import description from "../Description"
 
 export default {
     name:"eduhomepage",
-    components: {
+    components:{
         navbar,
-        // footer
+        description
     }
 }
 </script>
@@ -48,23 +38,50 @@ export default {
 .navbar {
   margin-top:0px;
 }
+
+.title{
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 24px;
+}
 .logo {
   height: 80px;
   width: 130px;
   position: left;
   float:left;
 }
+.grid-content{
+  margin-top:6%;
+}
 
-.button {
+.grid-content2 {
+  margin-top:20%;
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #E4CEE0; 
+}
+
+.button{
   background-color: #C998C3;
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
-  font-size: 24px;
-  width: 200px;
-  height: 75px;
-  margin-top: 100px;
-  padding-bottom: 9px; 
+  font-size: 20px;
+  width: 300px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 30px;
+
+}
+
+.button:hover {
+   background-color: #ffffff;
+   color: #C998C3;
 }
 
 </style> 

@@ -1,7 +1,5 @@
 <template>
   <div id="description">
-      <navbar/>
-      <p>STEP 2: DESCRIPTION</p>
       <el-main padding="100px">
         <el-form :label-position="'left'" :model="inputForm">
             <el-form-item label="Merged File Name">
@@ -10,32 +8,28 @@
             <el-form-item label="Description">
                 <el-input v-model="inputForm.description"></el-input>
             </el-form-item>
-            <el-form-item label="Username">
-                <el-input v-model="inputForm.username"></el-input>
-            </el-form-item>
             <el-form-item label="Beginning Pitch">
                 <el-input v-model="inputForm.beginningPitch"></el-input>
             </el-form-item>
         </el-form>
-
-        <a href="/preview"><el-button round type="circle" src="button" class="button">next</el-button></a>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> 
+        <a href="/preview"><el-button round type="circle" src="button" class="buttonsub">submit</el-button></a>
       </el-main>
   </div>
 </template>
 
 <script scoped>
-import navbar from "./components/Navbar"
+
 export default {
   name: 'Description',
   components: {
-      navbar
+
   },
   data() {
       return {
           inputForm: {
           filename: '',
           description: '',
-          username: '',
           beginningPitch: ''
       }}
   }
@@ -54,8 +48,11 @@ body {
   position: relative;
   height: 100%; 
 }
+#description{
+  font-family: 'Kumbh Sans', sans-serif;
+}
 #home {
-  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  font-family: 'Kumbh Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -72,16 +69,18 @@ body {
   padding: 0;
 }
 
-.button {
+.buttonsub {
   margin-top: 10px;
   background-color: #C998C3;
   color: #ffffff;
   font-size: 24px;
-  width: 100px;
+  width: 120px;
   height: 40px;
+  font-family: 'Kumbh Sans', sans-serif;
+  text-align: center;
 }
-.button:hover {
-   background-color: #E4CEE0;
+.buttonsub:hover {
+   background-color: #ffffff;
    color: #C998C3;
 }
 </style>
