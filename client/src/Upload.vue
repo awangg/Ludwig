@@ -67,7 +67,7 @@ body {
   height: 100%; 
 }
 #home {
-  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

@@ -5,17 +5,18 @@
         <span>
          <Logo />
 
-        <div id="button">
-          <a href='/upload'><el-button round type="circle" src="button" class="button">sync</el-button></a>
+        <div class="title">
+          Ludwig
         </div>
         </span>
       </div></el-col>
     </div>
   <div id="background"><div class = "grid-content2">
-      <span src = "slogan" class = "slogan">the app that syncs music</span>
+      <br><a href='/AboutUs'><el-button round type="circle" src="button" class="button1">about us</el-button></a>
+      <span src = "slogan" class = "slogan">Bringing students and music educators together.</span>
       <br><a href='/login'><el-button round type="circle" src="button" class="button">login</el-button></a>
       <br><a href='/signup'><el-button round type="circle" src="button" class="button">signup</el-button></a>
-      <br><a href='/AboutUs'><el-button round type="circle" src="button" class="button">about us</el-button></a>
+      
   </div></div>    
 </div>
     
@@ -34,7 +35,11 @@ export default {
 
 <style>
 
-
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+}
 .el-col {
     border-radius: 4px;
      position: relative; /* Declared position allows for location changes */
@@ -47,7 +52,7 @@ export default {
 }
 
 .grid-content2 {
-  margin-top:50%;
+  margin-top:20%;
 }
 
 #background {
@@ -73,7 +78,7 @@ body {
 }
 
 #home {
-  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -90,10 +95,22 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.button1{
+  background-color: #C998C3;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 24px;
+  width: 200px;
+  height: 75px;
+  margin-top: 20px;
+  padding-bottom: 0px;
+}
 .button {
   background-color: #C998C3;
   color: #ffffff;
-  font-family: "../assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   font-size: 24px;
   width: 200px;
@@ -103,7 +120,9 @@ body {
 }
 
 .slogan {
-  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
