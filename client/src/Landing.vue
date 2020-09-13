@@ -29,9 +29,9 @@
   <div class="form">
     <form class="login-form">
       <p src = "welcome" class = "welcome">LOG IN</p>
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <a href='/login'><el-button round type="circle" src="button" class="button">login</el-button></a>
+      <input type="text" placeholder="email" v-model="username"/>
+      <input type="password" placeholder="password" v-model="password"/>
+      <el-button round type="circle" src="button" class="button" v-on:click="sendLoginRequest">login</el-button>
       <p class="message">Not registered? <a href="/signup">Create an account</a></p>
     </form>
   </div>
@@ -45,11 +45,47 @@
 
 <script scoped>
 import Logo from "./components/Logo.vue"
+import axios from 'axios'
+import config from './config'
 
 export default {
   name: 'Landing',
   components: {
     Logo
+  },
+  data() {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  methods: {
+    sendLoginRequest() {
+      if(this.username.length > 0 && this.password.length > 0) {
+        axios({
+          method: 'post',
+          url: config.api.LOGIN_URL,
+          data: {
+            email: this.username,
+            password: this.password
+          }
+        }).then( (res) => {
+          let response = res.data
+          if(!response.error) {
+            this.$cookies.set('roles', response.roles)
+            this.$cookies.set('name', response.name)
+            this.$cookies.set('email', response.email)
+            this.$cookies.set('token', response.token)
+
+            if(response.roles.includes('teacher')) this.$router.push('educatorHome')
+            else if(response.roles.includes('student')) this.$router.push('studentHome')
+
+          } else {
+            console.log(response.error)
+          }
+        })
+      }
+    }
   }
 }
 </script>

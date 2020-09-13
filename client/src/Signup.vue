@@ -4,13 +4,12 @@
           <p src = "welcome" class = "welcome">Welcome to Ludwig</p>
   <div class="form">
     <form class="signup-form">
-      <input type="firstname" placeholder="first name"/>
-      <input type="lastname" placeholder="last name"/>
-      <input type="password" placeholder="password"/>
-      <input type="code" placeholder="class code"/>
-      <input type="email" placeholder="email"/>
+      <input type="text" placeholder="name" v-model="name"/>
+      <input type="password" placeholder="password" v-model="password"/>
+      <input type="text" placeholder="class code" v-model="classCode"/>
+      <input type="email" placeholder="email" v-model="email"/>
       
-      <a href='/signup'><el-button round type="circle" src="button" class="button">sign up</el-button></a>
+      <a href='/signup'><el-button round type="circle" src="button" class="button" v-on:click="sendSignupRequest">sign up</el-button></a>
       <p class="message">Already registered? <a href="/">Log In</a></p>
     </form>
   </div>
@@ -19,21 +18,42 @@
 </template>
 
 <script scoped>
+import axios from 'axios'
+import config from './config'
+
 export default {
   name: 'Login',
   components: {
   },
   data() {
       return {
-        loginList: {
-          password: '',
-          email: ''
-        }
+        name: '',
+        password: '',
+        classCode: '',
+        email: '',
+        role: 'student'
       }
     },
     methods: {
-      onSubmit() {
-        console.log('submit!');
+      sendSignupRequest() {
+        if(this.name.length > 0 && this.password.length > 0 && this.classCode.length > 0 && this.email.length > 0) {
+          axios({
+            method: 'post',
+            url: config.api.SIGNUP_URL,
+            data: {
+              name: this.name,
+              password: this.password,
+              classCode: this.classCode,
+              email: this.email,
+              role: this.role
+            }
+          }).then( (res) => {
+            let response = res.data
+            if(!response.error) {
+              this.$router.push({ name: 'landing' })
+            }
+          })
+        }
       }
     }
   }

@@ -10,7 +10,7 @@
             <p>  </p>
           </el-col>
           <el-col :span="4">
-            <el-button><a href="logout">Log Out</a></el-button>
+            <el-button v-on:click="nukeCookies">Log Out</el-button>
           </el-col>
         </el-row>
       </aside>
@@ -21,6 +21,15 @@
 <script>
 export default {
     name:"navbar",
+    methods: {
+      nukeCookies() {
+        this.$cookies.remove('name')
+        this.$cookies.remove('roles')
+        this.$cookies.remove('email')
+        this.$cookies.remove('token')
+        this.$router.push({ name: 'landing' })
+      }
+    }
 }
 </script>
     
