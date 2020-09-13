@@ -13,7 +13,7 @@
             </el-form-item>
         </el-form>
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> 
-        <a href="/preview"><el-button round type="circle" src="button" class="buttonsub">submit</el-button></a>
+        <a href="/preview"><el-button round type="circle" src="button" class="buttonsub">Submit</el-button></a>
       </el-main>
   </div>
 </template>
@@ -73,7 +73,7 @@ body {
   margin-top: 10px;
   background-color: #C998C3;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 20px;
   width: 120px;
   height: 40px;
   font-family: 'Kumbh Sans', sans-serif;

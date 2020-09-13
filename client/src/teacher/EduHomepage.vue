@@ -15,6 +15,7 @@
 
       <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
       <p src = "slogan" class = "title">Mix Recordings</p>
+      <el-button round type="circle" src="button" class="button1">Select Student Recordings</el-button>
       <description/>
       
   </div>
@@ -82,6 +83,24 @@ export default {
 }
 
 .button:hover {
+   background-color: #ffffff;
+   color: #C998C3;
+}
+
+.button1{
+  background-color: #C998C3;
+  color: #ffffff;
+  font-family: 'Kumbh Sans', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  width: 300px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 0px;
+
+}
+
+.button1:hover {
    background-color: #ffffff;
    color: #C998C3;
 }
