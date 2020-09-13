@@ -13,7 +13,7 @@
     </div>
   <div id="background"><div class = "grid-content2">
       <span src = "slogan" class = "slogan">the app that syncs music</span>
-      <br><a href='/AboutUs'><el-button round type="circle" src="button" class="button">sync</el-button></a>
+      <br><a href='/AboutUs'><el-button round type="circle" src="button" class="button">about us</el-button></a>
   </div></div>    
 </div>
     
