@@ -10,7 +10,7 @@
       <input type="code" placeholder="class code"/>
       <input type="email" placeholder="email"/>
       
-      <a href='/signup'><el-button round type="circle" src="button" class="button">sign up</el-button></a>
+      <a href='/signup'><el-button round type="circle" src="button" class="button">UNROUTED (signup)</el-button></a>
       <p class="message">Already registered? <a href="/">Log In</a></p>
     </form>
   </div>
