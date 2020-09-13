@@ -27,7 +27,7 @@ const login = async (email, password) => {
   }
 }
 
-const signup = async (name, email, password, role) => {
+const signup = async (name, email, password, classCode, role) => {
   user.findOne({ email: email }, async function(err, existing) {
     if(err) throw new Error('Error accessing user database')
     if(!existing) {
@@ -35,6 +35,7 @@ const signup = async (name, email, password, role) => {
         email: email,
         password: password,
         name: name,
+        classes: [ classCode ],
         roles: [ role ]
       })
       return newUser.save()

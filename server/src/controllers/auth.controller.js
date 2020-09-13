@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
 
 router.post('/new', async (req, res) => {
   try {
-    let newUser = await auth.signup(req.body.name, req.body.email, req.body.password, req.body.role)
+    let newUser = await auth.signup(req.body.name, req.body.email, req.body.password, req.body.classCode, req.body.role)
     res.status(201).json(newUser)
   } catch (err) {
     console.log(err)

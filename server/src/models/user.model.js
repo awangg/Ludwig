@@ -8,6 +8,9 @@ const personSchema = new Schema({
   password: { type: String, required: 'Password Invalid' },
   roles: [
     { type: String }
+  ],
+  classes: [
+    { type: String }
   ]
 })
 
