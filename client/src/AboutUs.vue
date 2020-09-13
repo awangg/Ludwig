@@ -1,8 +1,9 @@
 <template>
   <div id="AboutUs">
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-    <h1 class = "about-title">About Us</h1>
-    <img src="~@/assets/logo_final.png" alt="small_logo" class="small_logo">
+    <h1  class = "about-title">About Us</h1>
+    <a href='/'>
+    <img src="~@/assets/logo_final.png" alt="small_logo" class="small_logo" ></a>
     <img src="~@/assets/andy.jpg" alt="face" class="face">
     <img src="~@/assets/claire_pic.png" alt="face" class="face">
     <img src="~@/assets/megan_new.png" alt="face" class="face">
