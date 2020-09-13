@@ -6,12 +6,13 @@
          <Logo />
 
         <div class="title">
-          Ludwig
+          ludwig
         </div>
         </span>
       </div></el-col>
     </div>
   <div id="background"><div class = "grid-content2">
+      <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
       <br><a href='/AboutUs'><el-button round type="circle" src="button" class="button1">about us</el-button></a>
       <p src = "slogan" class = "slogan">Bringing students and music educators together.</p>
       <br><a href='/login'><el-button round type="circle" src="button" class="button2">login</el-button></a>
@@ -36,9 +37,9 @@ export default {
 <style>
 
 .title {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 60px;
 }
 .el-col {
     border-radius: 4px;
@@ -78,7 +79,7 @@ body {
 }
 
 #home {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
