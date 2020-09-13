@@ -4,7 +4,7 @@
      <el-col :span="11"><div class="grid-content">
         <span>
         <div class="title">
-          Find Your Sheet Music
+          Assignment
         </div>
         </span>
       </div></el-col>
