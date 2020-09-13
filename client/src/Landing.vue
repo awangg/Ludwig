@@ -12,8 +12,7 @@
       </div></el-col>
     </div>
   <div id="background"><div class = "grid-content2">
-      <span>this app doesn't sync music</span>
-      <br><a href='/upload'><el-button round type="circle" src="button" class="button">about us</el-button></a><br>
+      <span src = "slogan" class = "slogan">the app that syncs music</span>
   </div></div>    
 </div>
     
@@ -91,13 +90,20 @@ body {
 .button {
   background-color: #C998C3;
   color: #ffffff;
-  font-family: "helvetica";
+  font-family: "../assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
   text-align: center;
   font-size: 24px;
   width: 200px;
   height: 75px;
   margin-top: 100px;
-  position: center;
+}
+
+.slogan {
+  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #000000;
 }
 
 
