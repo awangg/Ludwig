@@ -1,16 +1,17 @@
 <template>
   <div id="login">
-      <div class="login-page">
+      <div class="signup-page">
           <p src = "welcome" class = "welcome">Welcome to Ludwig</p>
   <div class="form">
-    <form class="login-form">
+    <form class="signup-form">
       <input type="firstname" placeholder="first name"/>
       <input type="lastname" placeholder="last name"/>
       <input type="password" placeholder="password"/>
       <input type="code" placeholder="class code"/>
       <input type="email" placeholder="email"/>
-      <a href='/login'><el-button round type="circle" src="button" class="button">sign up</el-button></a>
-      <p class="message">Already registered? <a href="/signup">Log In</a></p>
+      
+      <a href='/signup'><el-button round type="circle" src="button" class="button">sign up</el-button></a>
+      <p class="message">Already registered? <a href="/">Log In</a></p>
     </form>
   </div>
 </div>
@@ -40,9 +41,9 @@ export default {
 </script>
 
 <style scoped>
-.login-page {
+.signup-page {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 2% 0 0;
   margin: auto;
 }
 .welcome{
@@ -123,10 +124,6 @@ export default {
 
 body {
   background: #E4CEE0; 
-  background: -webkit-linear-gradient(right, #E4CEE0, #E4CEE0);
-  background: -moz-linear-gradient(right, #E4CEE0, #E4CEE0);
-  background: -o-linear-gradient(right, #E4CEE0, #E4CEE0);
-  background: linear-gradient(to left, #E4CEE0, #E4CEE0);
   font-family: Helvetica, sans-serif, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;      
