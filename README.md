@@ -1,4 +1,4 @@
-# Musync
+# Ludwig
 
 Classroom and Synchronization platform for schools and virtual orchestras anywhere!
 
