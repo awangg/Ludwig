@@ -9,8 +9,8 @@
     
     <h4 class='intro'> We are Andy, Claire, Megan, and Thomas, 4 sophomores at Rice University 
         passionate about making music more accessible. musync was designed to help music educators, 
-        professional orchestras, and individual creators make music online efficiently. 
-        Let's focus on the music, not the syncing! </h4>
+        professional orchestras, and individual creators make music online efficiently, even when the 
+        musicians are not physically together. Let's focus on the music, not the syncing! </h4>
   </div>
 </template>
 
@@ -41,6 +41,8 @@ body {
 }
 .intro {
   font-size: 20px;
+  margin-left: 15px;
+  margin-right: 15px; 
 }
 
 .small_logo {
@@ -58,7 +60,7 @@ body {
   margin-top: 10px;
 }
 #home {
-  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  font-family: "~@/assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
