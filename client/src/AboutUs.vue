@@ -8,9 +8,9 @@
     <img src="~@/assets/Thomas_Yeum_copy.jpg" alt="face" class="face">
     
     <h4 class='intro'> We are Andy, Claire, Megan, and Thomas, 4 sophomores at Rice University 
-        passionate about making music more accessible. musync was designed to help music educators, 
-        professional orchestras, and individual creators make music online efficiently, even when the 
-        musicians are not physically together. Let's focus on the music, not the syncing! </h4>
+        passionate about making music more accessible. Ludwig was designed to help music educators and 
+        their students produce music online efficiently, even when musicians are not physically together. 
+        Let's focus on the music, not the syncing! </h4>
   </div>
 </template>
 
