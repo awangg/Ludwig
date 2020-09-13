@@ -16,6 +16,7 @@
         <div class="el-upload__text">Drop files here or <em>click to upload</em></div>
         <div class="el-upload__tip" slot="tip">mp3/mp4 files with a size less than 500TB</div>
       </el-upload>
+      <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
       <a href="/description"><el-button round type="circle" src="button" class="submitbutton">Submit</el-button></a>
     </el-main>
   </div>
@@ -86,6 +87,7 @@ body {
   margin-top: 10px;
   background-color: #C998C3;
   color: #ffffff;
+  font-family: 'Kumbh Sans', sans-serif;
   font-size: 24px;
   width: 150px;
   height: 40px;
@@ -94,5 +96,12 @@ body {
 .submitbutton:hover {
    background-color: #ffffff;
    color: #C998C3;
+   
+}
+.el-upload__text{
+  font-family: 'Kumbh Sans', sans-serif;
+}
+.el-upload__tip{
+  font-family: 'Kumbh Sans', sans-serif;
 }
 </style>

@@ -1,18 +1,27 @@
 <template>
   <div id="success">
+    <navbar/>
+      <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
       <p src="congrats" class = "congrats">Congratulations, you made music!</p>
-      <span><a href="/upload"><el-button round type="circle" src="success-button" class="success-button">let's make more!</el-button></a></span>
+      <logo />
+      <span><a href="/studentassignments"><el-button round type="circle" src="success-button" class="success-button">back to assignments</el-button></a></span>
+    
   </div>
+  
 </template>
 
-<script scoped>
-export default {
-  name: 'Success',
-  components: {
-  },
-  
-  }
+<script>
+import navbar from "./components/Navbar"
+import logo from "./components/Logo"
 
+export default {
+    name:"success",
+    
+    components:{
+        navbar,
+        logo
+    }
+}
 </script>
 
 <style scoped>
@@ -28,7 +37,7 @@ body {
   height: 100%; 
 }
 #home {
-  font-family: "./assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  font-family: 'Kumbh Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -48,15 +57,16 @@ body {
 .success-button {
   background-color: #C998C3;
   color: #ffffff;
-  font-family: "../assets/TeX-Gyre-Adventor/texgyreadventor-regular.otf";
+  font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
   font-size: 24px;
-  width: 200px;
-  height: 75px;
-  margin-top: 100px;
+  width: 300px;
+  height: 55px;
+  margin-top: 70px;
 }
 
 .congrats {
   font-size: 30px;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 </style>
