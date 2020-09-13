@@ -4,7 +4,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
       <p src="congrats" class = "congrats">Congratulations, you made music!</p>
       <logo />
-      <span><a href="/studentassignments"><el-button round type="circle" src="success-button" class="success-button">back to assignments</el-button></a></span>
+      <span><a href="/studentassignments"><el-button round type="circle" src="success-button" class="success-button">Back to Assignments</el-button></a></span>
     
   </div>
   
@@ -63,6 +63,11 @@ body {
   width: 300px;
   height: 55px;
   margin-top: 70px;
+}
+.success-button:hover {
+   background-color: #E4CEE0;
+   color: #C998C3;
+   
 }
 
 .congrats {

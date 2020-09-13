@@ -13,7 +13,7 @@
             </el-form-item>
         </el-form>
         <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> 
-        <a href="/preview"><el-button round type="circle" src="button" class="buttonsub">Submit</el-button></a>
+        <a href="/success"><el-button round type="circle" src="button" class="buttonsub">Submit</el-button></a>
       </el-main>
   </div>
 </template>

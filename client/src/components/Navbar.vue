@@ -11,7 +11,7 @@
             <p>  </p>
           </el-col>
           <el-col :span="4">
-            <el-button v-on:click="nukeCookies">Log Out</el-button>
+            <el-button round type="circle" src="button" class="logbutton" v-on:click="nukeCookies">Log Out</el-button>
           </el-col>
         </el-row>
       </aside>
@@ -49,17 +49,22 @@ export default {
 }
 
 
-.button1 {
+.logbutton {
   background-color: #C998C3;
   color: #ffffff;
   font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
   font-size: 20px;
-  width: 250px;
+  width: 150px;
   height: 50px;
   margin-right: 50px;
   margin-top: -30px;
 
+}
+.logbutton:hover {
+   background-color: #E4CEE0;
+   color: #C998C3;
+   
 }
 
 </style> 
