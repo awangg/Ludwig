@@ -4,11 +4,16 @@ const mongoose = require('mongoose')
 const MongoClient = mongodb.MongoClient
 
 var database;
-var bucket;
+var videoBucket;
+var imageBucket;
 MongoClient.connect(config.db.uri).then( (client) => {
+  console.log('Multipart Connection')
   database = client.db('musync')
-  bucket = new mongodb.GridFSBucket(database, {
+  videoBucket = new mongodb.GridFSBucket(database, {
     bucketName: 'videos'
+  })
+  imageBucket = new mongodb.GridFSBucket(database, {
+    bucketName: 'images'
   })
 }).catch( err => {
   console.log('Error loading DB')
@@ -23,5 +28,6 @@ mongoose.connection.on('error', (err) => {
 
 module.exports = {
   database: database,
-  bucket: bucket
+  videoBucket: videoBucket,
+  imageBucket: imageBucket
 }

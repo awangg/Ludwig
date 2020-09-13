@@ -4,8 +4,8 @@ const bodyParser = require('body-parser')
 const moment = require('moment')
 const cors = require('cors')
 
-const apiRoutes = require('../src/controllers')
 const mongoSetup = require('./mongo')
+const apiRoutes = require('../src/controllers')
 
 moment().format()
 
