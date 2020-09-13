@@ -1,10 +1,17 @@
 <template>
   <div id="landing">
     <div id="container">
+      <el-row :gutter="24">
+        <el-col :span="1" align-items="left">
+          <a href='/AboutUs'><el-button round type="circle" src="button" class="button1">about us</el-button></a>
+        </el-col>
+        <el-col :span="23" z-index="4">
+        </el-col>
+      </el-row>
+
       <el-col :span="11"><div class="grid-content">
         <span>
          <Logo />
-
         <div class="title">
           Ludwig
         </div>
@@ -12,14 +19,20 @@
       </div></el-col>
     </div>
   <div id="background"><div class = "grid-content2">
-      <br><a href='/AboutUs'><el-button round type="circle" src="button" class="button1">about us</el-button></a>
-      <p src = "slogan" class = "slogan">Bringing students and music educators together.</p>
-      <br><a href='/login'><el-button round type="circle" src="button" class="button2">login</el-button></a>
-      <br><a href='/signup'><el-button round type="circle" src="button" class="button3">signup</el-button></a>
-      
-  </div></div>    
-</div>
-    
+      <p src = "slogan" class = "slogan">Bringing music educators and students together during the era of COVID-19.</p>
+      <el-row>
+        <el-col :span="7"><p>  </p></el-col>
+        <el-col :span="5">
+      <a href='/login'><el-button round type="circle" src="button" class="button2">login</el-button></a>
+        </el-col>
+        <el-col :span="5">
+      <a href='/signup'><el-button round type="circle" src="button" class="button3">signup</el-button></a>
+        </el-col>
+        <el-col :span="7"></el-col>
+      </el-row>
+  </div>
+  </div>
+  </div>
 </template>
 
 <script scoped>
@@ -104,8 +117,9 @@ body {
   font-size: 20px;
   width: 120px;
   height: 50px;
-  margin-left: 400px;
-  padding-top: -100px;
+  margin-left: 10px;
+  margin-top: -30px;
+
 }
 .button2 {
   background-color: #C998C3;
@@ -117,7 +131,6 @@ body {
   font-size: 30px;
   width: 120px;
   height: 60px;
-  margin-bottom: 15px;
 }
 .button3 {
   background-color: #C998C3;
@@ -130,7 +143,6 @@ body {
   width: 135px;
   height: 60px;
   top: 50px;
-  padding-top: 100px;
 }
 
 
