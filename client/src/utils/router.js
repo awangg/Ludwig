@@ -6,6 +6,7 @@ import Upload from '../Upload.vue';
 import Description from '../Description.vue';
 import Preview from '../Preview.vue';
 import AboutUs from '../AboutUs.vue';
+import Success from '../Success.vue';
 
 Vue.use(VueRouter);
 
@@ -34,7 +35,12 @@ const routes = [
     path: '/aboutus',
     name: 'aboutus',
     component:  AboutUs
-  }
+  },
+  {
+    path: '/success',
+    name: 'success',
+    component: Success
+  },
   
 ];
 
