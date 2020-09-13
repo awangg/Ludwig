@@ -6,15 +6,25 @@
         <div class="title">
           New Assignments
         </div>
-        <el-button round type="circle" src="button" class="button" id="show-modal" @click="showModal = true" >Create New Assignment</el-button>
+        <el-upload
+          class="upload-demo"
+          drag
+          name="assignment"
+          :headers="headers"
+          action="http://localhost:3000/api/v1/assignments"
+          :on-success="createNewAssignment"
+          show-file-list>
+          <i class="el-icon-upload"></i>
+          <div class="el-upload__text">Drop files here or <em>click to upload</em></div>
+          <div class="el-upload__tip" slot="tip">pdf files with a size less than 1GB</div>
+        </el-upload>
         <div class = "existing">
           Existing Assignments
         </div>
-        <div class = "list_existing" >
-          <br>
-          current assignment 1 <br>
-          current assignment 2 <br>
-          current assignment 3
+        <div class = "list_existing">
+          <div class="assignment-container" v-for="(id, index) in ids" :key="index">
+            <el-button v-on:click="getSpecificAssignment(id)"> Assignment {{ index + 1}} </el-button>
+          </div>
         </div>
         </span>
       </div></el-col>
@@ -22,9 +32,19 @@
       <div id="background"><div class = "grid-content2">
 
       <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-      <p src = "slogan" class = "title">Mix Recordings</p>
-      <el-button round type="circle" src="button" class="button1">Select Student Recordings</el-button>
-      <description/>
+      <p src = "slogan" class = "title">Synchronize Recordings</p>
+      <el-main padding="100px">
+        <el-form :label-position="'left'">
+            <el-form-item label="Tempo">
+                <el-input v-model="inputForm.tempo"></el-input>
+            </el-form-item>
+            <el-form-item label="Specificity">
+                <el-input v-model="inputForm.specificity"></el-input>
+            </el-form-item>
+        </el-form>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> 
+        <el-button round type="circle" src="button" class="buttonsub" v-on:click="mergeAssignments">Submit</el-button>
+      </el-main>
       
   </div>
   </div></div>
@@ -32,13 +52,80 @@
     
 <script>
 import navbar from "../components/Navbar"
-import description from "../Description"
+import axios from 'axios'
 
 export default {
     name:"eduhomepage",
     components:{
-        navbar,
-        description
+        navbar
+    },
+    data() {
+      return {
+        ids: [],
+        inputForm: {
+          tempo: '',
+          specificity: ''
+        },
+        headers: {
+          'Authorization': 'Bearer ' + this.$cookies.get('token')
+        }
+      }
+    },
+    created() {
+      this.getAllAssignments()
+    },
+    methods: {
+      getAllAssignments() {
+        axios({
+          method: 'get',
+          url: 'http://localhost:3000/api/v1/assignments',
+          headers: {
+            'Authorization': 'Bearer ' + this.$cookies.get('token')
+          }
+        }).then( (res) => {
+          let response = res.data
+          this.ids = response
+        })
+      },
+      createNewAssignment() {
+        console.log('lol')
+      },
+      getSpecificAssignment(id) {
+        axios({
+          method: 'get',
+          url: `http://localhost:3000/api/v1/assignments/${id}`,
+          headers: {
+            'Authorization': 'Bearer ' + this.$cookies.get('token')
+          },
+          responseType: 'blob'
+        }).then( (res) => {
+          let response = res.data
+          const data = window.URL.createObjectURL(response)
+          let link = document.createElement('a')
+          link.href = data
+          link.download = 'assignment.pdf'
+          link.click()
+          setTimeout(function() {
+            window.URL.revokeObjectURL(data)
+          }, 100)
+        })
+      },
+      mergeAssignments() {
+        axios({
+          method: 'post',
+          url: `http://localhost:3000/api/v1/videos/merge`,
+          headers: {
+            'Authorization': 'Bearer ' + this.$cookies.get('token')
+          },
+          data: {
+            tempo: this.inputForm.tempo,
+            specificity: this.inputForm.specificity
+          }
+        }).then( (res) => {
+          let response = res.data
+          console.log(response)
+        })
+      }
     }
 
 }
@@ -98,6 +185,10 @@ export default {
 
 }
 
+.assignment-container {
+  margin-top: 1rem;
+}
+
 .button:hover {
    background-color: #ffffff;
    color: #C998C3;
@@ -119,6 +210,10 @@ export default {
 .button1:hover {
    background-color: #ffffff;
    color: #C998C3;
+}
+
+.list_existing {
+  margin-top: 2rem;
 }
 
 </style> 
