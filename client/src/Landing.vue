@@ -100,7 +100,7 @@ body {
 .button1{
   background-color: #C998C3;
   color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
   font-size: 20px;
   width: 120px;
@@ -113,7 +113,7 @@ body {
   color: #ffffff;
   line-height: 10px;
   background-position: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
   font-size: 30px;
   width: 120px;
@@ -125,7 +125,7 @@ body {
   color: #ffffff;
   line-height: 10px;
   background-position: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   text-align: center;
   font-size: 30px;
   width: 135px;
@@ -136,13 +136,13 @@ body {
 
 
 .slogan {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
   font-weight: bold;
   font-size: 50px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #000000;
+  color: #3C3C3C;
   margin-left: 15px;
   margin-right: 15px;
 }
