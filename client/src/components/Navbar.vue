@@ -10,7 +10,7 @@
             <p>  </p>
           </el-col>
           <el-col :span="4">
-            <el-button><a href="logout">Log Out</a></el-button>
+            <el-button><a href="\">Log Out</a></el-button>
           </el-col>
         </el-row>
       </aside>
