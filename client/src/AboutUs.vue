@@ -12,14 +12,18 @@
         passionate about making music more accessible. Ludwig was designed to help music educators and 
         their students produce music online efficiently, even when musicians are not physically together. 
         Let's focus on the music, not the syncing! </h4>
+    <Footer />
   </div>
 </template>
 
 <script scoped>
 
+import Footer from "./components/Footer.vue"
+
 export default {
   name: 'AboutUs',
   components: {
+    Footer
   }
 }
 </script>
