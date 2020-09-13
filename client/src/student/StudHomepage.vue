@@ -1,15 +1,41 @@
 <template>
   <div id="studhomepage">
     <navbar/>
+    <el-row gutter="20">
+      <el-col :span="4"><p> </p></el-col>
+      <el-col :span="16">
+        <el-col :span="4">
+        </el-col>
+        <el-col :span="20">
+          <div align="left">
+            <h1 margins="-25 0">Welcome to {CLASSNAME}</h1>
+            <h6 margin="-25 0"></h6>
+          </div>
+
+          <!-- ALL CLASSES THAT STUDENTS ARE ASSIGNED TO GOES HERE -->
+          <!-- <ul id="example-1">
+          <li v-for="item in items" :key="item.message">
+            {{ item.message }}
+          </li>
+          </ul> -->
+        
+        </el-col>
+      </el-col>
+      <el-col :span="4"><p> </p></el-col>
+    </el-row>
+    <!-- <footer/> -->
   </div>
 </template>
     
 <script>
 import navbar from "../components/Navbar"
+// import footer from "../components/Footer"
+
 export default {
     name:"studhomepage",
-    components:{
-        navbar
+    components: {
+        navbar,
+        // footer
     }
 }
 </script>
@@ -20,7 +46,6 @@ export default {
   margin-top:0px;
 }
 .logo {
-
   height: 80px;
   width: 130px;
   position: left;
