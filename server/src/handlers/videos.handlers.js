@@ -1,4 +1,4 @@
-const { database, bucket } = require('../../app/mongo')
+const config = require('../../config')
 const mongodb = require('mongodb')
 const { Readable } = require('stream')
 const fs = require('fs')
@@ -8,11 +8,25 @@ const wavDecoder = require('wav-decoder')
 const PitchFinder = require('pitchfinder')
 const SoxCommand = require('sox-audio')
 
+const MongoClient = mongodb.MongoClient
 const ObjectId = mongodb.ObjectID
 const detector = new PitchFinder.YIN()
 const TimeFormat = SoxCommand.TimeFormat
 
 const { video } = require('../models')
+
+var database;
+var videoBucket;
+MongoClient.connect(config.db.uri).then( (client) => {
+  database = client.db('musync')
+  videoBucket = new mongodb.GridFSBucket(database, {
+    bucketName: 'videos'
+  })
+}).catch( err => {
+  console.log('Error loading DB')
+  console.log(err)
+  process.exit(1)
+})
 
 const uploadMergedVideo = async (name, file) => {
   console.log(file)
@@ -26,7 +40,7 @@ const uploadMergedVideo = async (name, file) => {
   readableTrackStream.push(value.file)
   readableTrackStream.push(null)
 
-  let uploadStream = bucket.openUploadStream(value.name)
+  let uploadStream = videoBucket.openUploadStream(value.name)
   let id = uploadStream.id
   readableTrackStream.pipe(uploadStream)
 
@@ -43,7 +57,7 @@ const uploadMergedVideo = async (name, file) => {
 
 const getVideoById = async (videoId) => {
   let id = new ObjectId(videoId)
-  let downloadStream = bucket.openDownloadStream(id)
+  let downloadStream = videoBucket.openDownloadStream(id)
 
   return new Promise( (resolve, reject) => {
     let chunks = []

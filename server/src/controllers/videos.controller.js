@@ -7,11 +7,6 @@ const router = express.Router()
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage, limits: { fileSize: 200 * 1024 * 1024 } });
 
-router.get('/', (req, res) => {
-  res.status(200).send('Successfully received videos')
-  res.status(401).send('Unauthorized')
-})
-
 router.post('/', upload.single('video'), async (req, res) => {
   try {
     const videoId = await videos.uploadMergedVideo(req.body.name, req.file)
@@ -36,18 +31,6 @@ router.get('/:videoId', async (req, res) => {
     console.log(err)
     res.status(400).json(err)
   }
-})
-
-router.put('/:videoId', (req, res) => {
-  res.status(200).send('Retrieved video')
-  res.status(401).send('Unauthorized')
-  res.status(405).send('Invalid Input')
-})
-
-router.delete('/:videoId', (req, res) => {
-  res.status(200).send('Deleted Video')
-  res.status(401).send('Unauthorized')
-  res.status(405).send('Video not found')
 })
 
 router.post('/merge', upload.fields([{ name: 'video1', maxCount: 1 }, { name: 'video2', maxCount: 1 }]), async (req, res) => {
