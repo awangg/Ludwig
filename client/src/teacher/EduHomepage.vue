@@ -4,10 +4,18 @@
      <el-col :span="11"><div class="grid-content">
         <span>
         <div class="title">
-          Assignments
+          New Assignments
         </div>
         <el-button round type="circle" src="button" class="button" id="show-modal" @click="showModal = true" >Create New Assignment</el-button>
-         
+        <div class = "existing">
+          Existing Assignments
+        </div>
+        <div class = "list_existing" >
+          <br>
+          current assignment 1 <br>
+          current assignment 2 <br>
+          current assignment 3
+        </div>
         </span>
       </div></el-col>
       <!--need to get background color to not cover over navbar-->
@@ -43,6 +51,12 @@ export default {
 }
 
 .title{
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 24px;
+  margin-top: 50px;
+  align: center;
+}
+.existing {
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 24px;
   margin-top: 50px;
