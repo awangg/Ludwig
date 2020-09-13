@@ -109,25 +109,22 @@ const mergeVideos = async (meta) => {
     })
   })
 
-  let outputPath = path.join(os.tmpdir(), 'merged')
+  let outputPath = path.join(os.tmpdir(), 'merged4')
   console.log(outputPath)
-  let uploadStream = videoBucket.openUploadStream('merged')
+  let uploadStream = videoBucket.openUploadStream('merged4')
   let id = uploadStream.id
 
   commandPromise.then( async (paths) => {
     let mergeCommand = await SoxCommand()
       .input(paths[0])
       .input(paths[1])
+      .input(paths[2])
       .output(outputPath)
       .outputFileType('wav')
-      .combine('mix')
+      .combine('merge')
+      .on('progress', (progress) => { console.log('more progress'); console.log(progress) })
+      .on('end', () => { let readStream = fs.createReadStream(outputPath); readStream.pipe(uploadStream) })
       .run()
-
-    mergeCommand.on('end', () => {
-      console.log('merge success')
-      let readStream = fs.createReadStream(outputPath)
-      readStream.pipe(uploadStream)
-    })
   })
 
   return new Promise( (resolve, reject) => {
