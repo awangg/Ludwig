@@ -2,14 +2,15 @@ const express = require('express')
 const multer = require('multer')
 
 const { videos } = require('../handlers')
+const { verifyAuth } = require('../utils/auth')
 
 const router = express.Router()
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage, limits: { fileSize: 200 * 1024 * 1024 } });
 
-router.post('/', upload.single('video'), async (req, res) => {
+router.post('/', upload.single('video'), verifyAuth, async (req, res) => {
   try {
-    const videoId = await videos.uploadMergedVideo(req.body.name, req.file)
+    const videoId = await videos.uploadMergedVideo("videovideo", req.file)
     res.status(201).json(videoId)
   } catch (err) {
     console.log(err)
@@ -17,7 +18,7 @@ router.post('/', upload.single('video'), async (req, res) => {
   }
 })
 
-router.get('/:videoId', async (req, res) => {
+router.get('/:videoId', verifyAuth, async (req, res) => {
   try {
     const videoChunks = await videos.getVideoById(req.params.videoId)
     res.set('content-type', 'audio/mp3')
@@ -33,10 +34,12 @@ router.get('/:videoId', async (req, res) => {
   }
 })
 
-router.post('/merge', upload.fields([{ name: 'video1', maxCount: 1 }, { name: 'video2', maxCount: 1 }]), async (req, res) => {
+router.post('/merge', upload.none(), verifyAuth, async (req, res) => {
   try {
-    const mergedVideo = await videos.mergeVideos(req.files, req.body)
+    const mergedVideo = await videos.mergeVideos(req.body)
     console.log(mergedVideo)
+
+    res.status(200).json(mergedVideo)
   } catch (err) {
     console.log(err)
     res.status(400).send(err)

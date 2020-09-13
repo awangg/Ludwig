@@ -20,7 +20,7 @@ router.get('/', verifyAuth, async (req, res) => {
 
 router.post('/', upload.single('assignment'), verifyAuth, async (req, res) => {
   try {
-    let id = await assignments.uploadAssignment(req.body.name, req.file)
+    let id = await assignments.uploadAssignment("assignment", req.file)
     res.status(201).json(id)
   } catch (err) {
     console.log(err)
