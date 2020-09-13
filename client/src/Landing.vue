@@ -196,6 +196,10 @@ body {
   top: 50px;
 }
 
+.button1:hover {
+   background-color: #E4CEE0;
+   color: #C998C3;
+}
 
 .slogan {
   font-family: 'Kumbh Sans', sans-serif;

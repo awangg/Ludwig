@@ -17,7 +17,7 @@
         <div class="el-upload__tip" slot="tip">mp3/mp4 files with a size less than 500TB</div>
       </el-upload>
       <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
-      <a href="/description"><el-button round type="circle" src="button" class="submitbutton">Submit</el-button></a>
+      <a href="/success"><el-button round type="circle" src="button" class="submitbutton">Submit</el-button></a>
     </el-main>
   </div>
 </template>
