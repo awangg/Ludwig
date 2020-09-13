@@ -59,6 +59,13 @@ export default {
       password: ''
     }
   },
+  created() {
+    if(this.$cookies.get('token')) {
+      let roles = this.$cookies.get('roles')
+      if(roles.includes('teacher')) this.$router.push('educatorHome')
+      else if(roles.includes('student')) this.$router.push('studentHome')
+    }
+  },
   methods: {
     sendLoginRequest() {
       if(this.username.length > 0 && this.password.length > 0) {
