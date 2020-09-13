@@ -1,6 +1,19 @@
 <template>
   <div id="login">
-      <h1>LOGIN</h1>
+      <h1>Welcome Back</h1>
+      <el-row gutter="20">
+          <el-col :span="10">
+            <el-form ref="form" :model="loginList" label-width="120px">
+                <el-form-item label="Email">
+                    <el-input v-model="loginList.email"></el-input>
+                </el-form-item>
+                <el-form-item label="Password">
+                    <el-input v-model="loginList.password"></el-input>
+                </el-form-item>
+            </el-form>
+            <el-button>UNFINISHED (SUBMIT)</el-button>
+          </el-col>
+      </el-row>
   </div>
 </template>
 
@@ -9,7 +22,19 @@ export default {
   name: 'Login',
   components: {
   },
-  
+  data() {
+      return {
+        loginList: {
+          password: '',
+          email: ''
+        }
+      }
+    },
+    methods: {
+      onSubmit() {
+        console.log('submit!');
+      }
+    }
   }
 
 </script>
